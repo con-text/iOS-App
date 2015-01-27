@@ -14,6 +14,8 @@
 		A2541F551A77B00900B5B272 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2541F541A77B00900B5B272 /* Images.xcassets */; };
 		A2541F581A77B00900B5B272 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2541F561A77B00900B5B272 /* LaunchScreen.xib */; };
 		A2541F641A77B00900B5B272 /* AuthTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A2541F631A77B00900B5B272 /* AuthTests.m */; };
+		A2541F6E1A77B1C200B5B272 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2541F6D1A77B1C200B5B272 /* CoreBluetooth.framework */; };
+		A2541F791A77B39600B5B272 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = A2541F781A77B39600B5B272 /* Constants.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,9 @@
 		A2541F5D1A77B00900B5B272 /* AuthTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AuthTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2541F621A77B00900B5B272 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2541F631A77B00900B5B272 /* AuthTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthTests.m; sourceTree = "<group>"; };
+		A2541F6D1A77B1C200B5B272 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		A2541F771A77B39600B5B272 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		A2541F781A77B39600B5B272 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2541F6E1A77B1C200B5B272 /* CoreBluetooth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +69,7 @@
 		A2541F3B1A77B00900B5B272 = {
 			isa = PBXGroup;
 			children = (
+				A2541F6D1A77B1C200B5B272 /* CoreBluetooth.framework */,
 				A2541F461A77B00900B5B272 /* Auth */,
 				A2541F601A77B00900B5B272 /* AuthTests */,
 				A2541F451A77B00900B5B272 /* Products */,
@@ -85,6 +92,8 @@
 				A2541F4C1A77B00900B5B272 /* AppDelegate.m */,
 				A2541F4E1A77B00900B5B272 /* ViewController.h */,
 				A2541F4F1A77B00900B5B272 /* ViewController.m */,
+				A2541F771A77B39600B5B272 /* Constants.h */,
+				A2541F781A77B39600B5B272 /* Constants.m */,
 				A2541F511A77B00900B5B272 /* Main.storyboard */,
 				A2541F541A77B00900B5B272 /* Images.xcassets */,
 				A2541F561A77B00900B5B272 /* LaunchScreen.xib */,
@@ -222,6 +231,7 @@
 				A2541F501A77B00900B5B272 /* ViewController.m in Sources */,
 				A2541F4D1A77B00900B5B272 /* AppDelegate.m in Sources */,
 				A2541F4A1A77B00900B5B272 /* main.m in Sources */,
+				A2541F791A77B39600B5B272 /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
