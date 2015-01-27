@@ -40,7 +40,10 @@
             break;
             
         case CBPeripheralManagerStatePoweredOn:
-            self.peripheralManager startAdvertising:@{
+            [self.peripheralManager startAdvertising:@{CBAdvertisementDataLocalNameKey : @"Ethan is a cunt",
+                                                      CBAdvertisementDataServiceUUIDsKey : [CBUUID UeUIDWithString:BLE_SERVICE_UUID],
+                                                       CBAdvertisementDataServiceDataKey : @"LOL"}];
+            break;
             
         default:
             break;
