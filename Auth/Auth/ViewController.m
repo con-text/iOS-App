@@ -41,7 +41,7 @@
             
         case CBPeripheralManagerStatePoweredOn:
             [self.peripheralManager startAdvertising:@{CBAdvertisementDataLocalNameKey : @"Ethan is a cunt",
-                                                      CBAdvertisementDataServiceUUIDsKey : [CBUUID UeUIDWithString:BLE_SERVICE_UUID],
+                                                      CBAdvertisementDataServiceUUIDsKey : [CBUUID UUIDWithString:BLE_SERVICE_UUID],
                                                        CBAdvertisementDataServiceDataKey : @"LOL"}];
             break;
             
