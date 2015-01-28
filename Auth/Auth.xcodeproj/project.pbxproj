@@ -177,6 +177,7 @@
 				TargetAttributes = {
 					A2541F431A77B00900B5B272 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = B3463FU4E4;
 					};
 					A2541F5C1A77B00900B5B272 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -354,6 +355,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Auth/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -364,6 +366,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Auth/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -422,6 +425,7 @@
 				A2541F691A77B00900B5B272 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A2541F6A1A77B00900B5B272 /* Build configuration list for PBXNativeTarget "AuthTests" */ = {
 			isa = XCConfigurationList;
@@ -430,6 +434,7 @@
 				A2541F6C1A77B00900B5B272 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
