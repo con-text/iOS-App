@@ -14,6 +14,9 @@
 
 @property (nonatomic, strong) CBPeripheralManager *peripheralManager;
 @property (nonatomic, strong) CBMutableCharacteristic *key;
+@property (nonatomic, strong) NSData *keyToSend;
+@property (nonatomic, assign) NSInteger sendDataIndex;
+@property (nonatomic, assign) BOOL sendingEOM;
 
 @end
 
@@ -103,10 +106,92 @@
 
 - (void)peripheralManager:(CBPeripheralManager *)peripheral central:(CBCentral *)central didSubscribeToCharacteristic:(CBCharacteristic *)characteristic
 {
+    NSLog(@"Maximum update length %lu", central.maximumUpdateValueLength);
     
     NSString *tempKey = @"MIIBCgKCAQEA+xGZ/wcz9ugFpP07Nspo6U17l0YhFiFpxxU4pTk3Lifz9R3zsIsuERwta7+fWIfxOo208ett/jhskiVodSEt3QBGh4XBipyWopKwZ93HHaDVZAALi/2A+xTBtWdEo7XGUujKDvC2/aZKukfjpOiUI8AhLAfjmlcD/UZ1QPh0mHsglRNCmpCwmwSXA9VNmhz+PiB+Dml4WWnKW/VHo2ujTXxq7+efMU4H2fny3Se3KYOsFPFGZ1TNQSYlFuShWrHPtiLmUdPoP6CV2mML1tk+l7DIIqXrQhLUKDACeM5roMx0kLhUWB8P+0uj1CNlNN4JRZlC7xFfqiMbFRU9Z4N6YwIDAQAB";
-    NSData *keyData = [tempKey dataUsingEncoding:NSASCIIStringEncoding];
-    [self.peripheralManager updateValue:keyData forCharacteristic:self.key onSubscribedCentrals:nil];
+    
+    // Store the key we send and reset the index
+    self.keyToSend = [tempKey dataUsingEncoding:NSASCIIStringEncoding];
+    self.sendDataIndex = 0;
+    self.sendingEOM = NO;
+    
+    [self sendDataWithMTU:central.maximumUpdateValueLength];
+}
+
+- (void)sendDataWithMTU:(NSInteger)MTUValue
+{
+    static const char EOTBytes[] = "\x04";
+    static const size_t EOTLength = sizeof(EOTBytes) - 1;
+    
+    // Send the EOM so the central knows all our data has been sent
+    if (self.sendingEOM) {
+        
+        BOOL didSend = [self.peripheralManager updateValue:[NSData dataWithBytes:EOTBytes length:EOTLength] forCharacteristic:self.key onSubscribedCentrals:nil];
+        
+        if (didSend) {
+            self.sendingEOM = NO;
+            NSLog(@"Sent the EOM message");
+        }
+        
+        return;
+    }
+    
+    // There's no more data to send
+    if (self.sendDataIndex >= self.keyToSend.length) {
+        return;
+    }
+    
+    // Loop until we've sent all the data
+    BOOL didSend = YES;
+    
+    while (didSend) {
+        NSInteger amountToSend = self.keyToSend.length - self.sendDataIndex;
+        
+        // We can't send more than the MTU size
+        if (amountToSend > MTUValue) {
+            amountToSend = MTUValue;
+        }
+        
+        // Copy the data chunk we want to send
+        NSData *dataChunk = [NSData dataWithBytes:self.keyToSend.bytes+self.sendDataIndex length:amountToSend];
+        
+        // Send this chunk
+        didSend = [self.peripheralManager updateValue:dataChunk forCharacteristic:self.key onSubscribedCentrals:nil];
+        
+        if (didSend == NO) {
+            return;
+        }
+        
+        // Print out what we've sent
+        NSString *stringFromData = [[NSString alloc] initWithData:dataChunk encoding:NSUTF8StringEncoding];
+        NSLog(@"Sent chunk: %@", stringFromData);
+        
+        // It sent so update our index
+        self.sendDataIndex += amountToSend;
+        
+        // Was it the last packet that we need to send
+        if (self.sendDataIndex >= self.keyToSend.length) {
+            
+            // Send the EOM
+            self.sendingEOM = YES;
+            
+            BOOL EOMSent = [self.peripheralManager updateValue:[NSData dataWithBytes:EOTBytes length:EOTLength] forCharacteristic:self.key onSubscribedCentrals:nil];
+            
+            if (EOMSent) {
+                self.sendingEOM = NO;
+                
+                NSLog(@"Sent the EOM message");
+            }
+            
+            return;
+        }
+    }
+}
+
+- (void)peripheralManagerIsReadyToUpdateSubscribers:(CBPeripheralManager *)peripheral
+{
+    // Hard coded at this point, assuming we're only connected to one device
+    [self sendDataWithMTU:101];
 }
 
 @end
