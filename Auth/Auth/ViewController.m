@@ -63,15 +63,9 @@
             break;
             
         case CBPeripheralManagerStatePoweredOn:
-<<<<<<< HEAD
-            [self.peripheralManager startAdvertising:@{CBAdvertisementDataLocalNameKey : @"Ethan is a cunt",
-                                                      CBAdvertisementDataServiceUUIDsKey : [CBUUID UUIDWithString:BLE_SERVICE_UUID],
-                                                       CBAdvertisementDataServiceDataKey : @"LOL"}];
-=======
             NSLog(@"Powered on");
             [self setupPeripheral];
             [self.peripheralManager startAdvertising:@{CBAdvertisementDataServiceUUIDsKey : @[[CBUUID UUIDWithString:IDENTITY_SERVICE_UUID]]}];
->>>>>>> 99323e6f4583e88436774a4518e5b37120631c90
             break;
             
             
