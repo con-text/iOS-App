@@ -17,6 +17,8 @@
 @property (nonatomic, strong) NSData *keyToSend;
 @property (nonatomic, assign) NSInteger sendDataIndex;
 @property (nonatomic, assign) BOOL sendingEOM;
+@property (weak, nonatomic) IBOutlet UITextField *usernameTextbox;
+@property (weak, nonatomic) IBOutlet UIButton *startAdvertisingButton;
 
 @end
 
@@ -27,6 +29,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.peripheralManager = [[CBPeripheralManager alloc] initWithDelegate:self queue:nil];
     self.peripheralManager.delegate = self;
+    self.startAdvertisingButton.enabled = NO;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,12 +39,18 @@
 
 - (void)setupPeripheral
 {
+    // Reset and get the new username
+    [self.peripheralManager removeAllServices];
+
+    // Get the username
+    NSString *username = [self.usernameTextbox.text isEqualToString:@""] ? @"Test-User" : self.usernameTextbox.text;
+    
     /* Profile structure:
-        - UserID
-        - NoNcE field
-        - Writeable Key
+     - UserID
+     - NoNcE field
+     - Writeable Key
      */
-    CBMutableCharacteristic *userDeviceID = [[CBMutableCharacteristic alloc] initWithType:[CBUUID UUIDWithString:IDENTITY_CHARACTERISTIC_UUID] properties:CBCharacteristicPropertyRead value:[@"User-5" dataUsingEncoding:NSUTF8StringEncoding] permissions:CBAttributePermissionsReadable];
+    CBMutableCharacteristic *userDeviceID = [[CBMutableCharacteristic alloc] initWithType:[CBUUID UUIDWithString:IDENTITY_CHARACTERISTIC_UUID] properties:CBCharacteristicPropertyRead value:[username dataUsingEncoding:NSUTF8StringEncoding] permissions:CBAttributePermissionsReadable];
     CBMutableCharacteristic *nonce = [[CBMutableCharacteristic alloc] initWithType:[CBUUID UUIDWithString:NONCE_CHARACTERISTIC_UUID] properties:CBCharacteristicPropertyWriteWithoutResponse value:nil permissions:CBAttributePermissionsWriteable];
     self.key = [[CBMutableCharacteristic alloc] initWithType:[CBUUID UUIDWithString:KEY_CHARACTERISTIC_UUID] properties:CBCharacteristicPropertyNotify value:nil permissions:CBAttributePermissionsReadable];
     CBMutableService *userservice = [[CBMutableService alloc] initWithType:[CBUUID UUIDWithString:IDENTITY_SERVICE_UUID
@@ -53,6 +62,17 @@
     [self.peripheralManager addService:userservice];
 }
 
+- (IBAction)toggleAdvertising:(id)sender
+{
+    if (self.peripheralManager.isAdvertising == TRUE) {
+        [self.peripheralManager stopAdvertising];
+    } else {
+        [self setupPeripheral];
+        NSDictionary *advertisingDictionary = @{CBAdvertisementDataServiceUUIDsKey : @[[CBUUID UUIDWithString:IDENTITY_SERVICE_UUID]]};
+        [self.peripheralManager startAdvertising:advertisingDictionary];
+    }
+}
+
 #pragma mark - CBCentralMangerDelegate
 
 - (void)peripheralManagerDidUpdateState:(CBPeripheralManager *)peripheral
@@ -60,14 +80,33 @@
     switch (peripheral.state) {
         case CBPeripheralManagerStatePoweredOff:
             NSLog(@"Powered off");
+            self.startAdvertisingButton.enabled = NO;
             break;
             
+        case CBPeripheralManagerStateResetting:
+            NSLog(@"Bluetooth resetting");
+            self.startAdvertisingButton.enabled = NO;
+            break;
+            
+        case CBPeripheralManagerStateUnauthorized:
+            NSLog(@"Bluetooth unauthorized");
+            self.startAdvertisingButton.enabled = NO;
+            break;
+            
+        case CBPeripheralManagerStateUnknown:
+            NSLog(@"Unknown state");
+            self.startAdvertisingButton.enabled = NO;
+            break;
+            
+        case CBPeripheralManagerStateUnsupported:
+            NSLog(@"Bluetooth unsupported");
+            self.startAdvertisingButton.enabled = NO;
+            break;
+        
         case CBPeripheralManagerStatePoweredOn:
             NSLog(@"Powered on");
-            [self setupPeripheral];
-            [self.peripheralManager startAdvertising:@{CBAdvertisementDataServiceUUIDsKey : @[[CBUUID UUIDWithString:IDENTITY_SERVICE_UUID]]}];
+            self.startAdvertisingButton.enabled = YES;
             break;
-            
             
         default:
             break;
