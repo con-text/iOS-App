@@ -1,0 +1,11 @@
+# Uncomment this line to define a global platform for your project
+platform :ios, '8.0'
+
+target 'nimble' do
+pod 'Facebook-iOS-SDK', '~> 3.23'
+end
+
+target 'nimbleTests' do
+
+end
+
