@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -13,28 +14,62 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="11b-vg-AOG" customClass="FBLoginView">
-                                <rect key="frame" x="163" y="526" width="274" height="54"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Login-BG" translatesAutoresizingMaskIntoConstraints="NO" id="d1y-Bq-V4W">
+                                <rect key="frame" x="-22" y="-35" width="419" height="736"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="419" id="2gP-3z-6wT"/>
+                                    <constraint firstAttribute="height" constant="736" id="ffy-3V-Pci"/>
+                                </constraints>
+                            </imageView>
+                            <view alpha="0.94999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="11b-vg-AOG" customClass="FBLoginView">
+                                <rect key="frame" x="81" y="571" width="213" height="42"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="11b-vg-AOG" secondAttribute="centerY" constant="-253" id="BX0-US-i7D"/>
-                            <constraint firstItem="11b-vg-AOG" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="DOq-kf-dDu"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="11b-vg-AOG" secondAttribute="bottom" constant="20" id="JH9-Vf-4UL"/>
-                            <constraint firstItem="11b-vg-AOG" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="163" id="k0g-48-nki"/>
+                            <constraint firstItem="11b-vg-AOG" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="551" id="4je-nD-zgd"/>
+                            <constraint firstAttribute="centerX" secondItem="d1y-Bq-V4W" secondAttribute="centerX" constant="-0.5" id="F2Q-Tm-4kA"/>
+                            <constraint firstAttribute="bottom" secondItem="11b-vg-AOG" secondAttribute="bottom" constant="54" id="Min-Jn-Aia"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="11b-vg-AOG" secondAttribute="trailing" constant="65" id="Ph4-BO-2LL"/>
+                            <constraint firstItem="11b-vg-AOG" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="65" id="XGF-HT-ltj"/>
+                            <constraint firstAttribute="centerY" secondItem="d1y-Bq-V4W" secondAttribute="centerY" id="yPl-nk-rtH"/>
                         </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="loginButton" destination="11b-vg-AOG" id="SHN-TF-ap2"/>
+                        <segue destination="WEr-6r-nxZ" kind="custom" id="VnI-dr-1uC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="304.5" y="305.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tzo-Qu-jaW">
+            <objects>
+                <viewController id="WEr-6r-nxZ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oNZ-mr-CVf"/>
+                        <viewControllerLayoutGuide type="bottom" id="MK7-1X-GVU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XA7-jl-fll">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ric-Vv-V1G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="904" y="324"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Login-BG" width="360" height="640"/>
+    </resources>
 </document>

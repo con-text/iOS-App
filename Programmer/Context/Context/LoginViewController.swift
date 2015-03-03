@@ -25,6 +25,10 @@ class LoginViewController: UIViewController, FBLoginViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
+    }
+    
     //MARK: Facebook delegates
     
     func loginView(loginView: FBLoginView!, handleError: NSError!) {
@@ -41,6 +45,7 @@ class LoginViewController: UIViewController, FBLoginViewDelegate {
     
     func loginViewShowingLoggedInUser(loginView: FBLoginView!) {
         println("User logged in")
+        self.performSegueWithIdentifier(<#identifier: String?#>, sender: <#AnyObject?#>)
     }
     
     func loginViewShowingLoggedOutUser(loginView: FBLoginView!) {

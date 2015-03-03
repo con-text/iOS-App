@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A223F55F1AA635B50092F066 /* LoginSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A223F55E1AA635B50092F066 /* LoginSegue.swift */; };
 		A2756EEF1A9F40F900D892F7 /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2756EEE1A9F40F900D892F7 /* BluetoothManager.swift */; };
 		A2F2F3031A9E45970030177D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F2F3021A9E45970030177D /* AppDelegate.swift */; };
 		A2F2F3051A9E45970030177D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F2F3041A9E45970030177D /* LoginViewController.swift */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		537BC98BEE99D850C72FDF0F /* Pods-nimble.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nimble.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nimble/Pods-nimble.debug.xcconfig"; sourceTree = "<group>"; };
+		A223F55E1AA635B50092F066 /* LoginSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSegue.swift; sourceTree = "<group>"; };
 		A23F270D1AA60EBA008A859F /* Context-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Context-Bridging-Header.h"; sourceTree = "<group>"; };
 		A2756EEE1A9F40F900D892F7 /* BluetoothManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
 		A2F2F2FD1A9E45970030177D /* nimble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nimble.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,6 +105,7 @@
 				A2F2F30B1A9E45970030177D /* LaunchScreen.xib */,
 				A2F2F3001A9E45970030177D /* Supporting Files */,
 				A23F270D1AA60EBA008A859F /* Context-Bridging-Header.h */,
+				A223F55E1AA635B50092F066 /* LoginSegue.swift */,
 			);
 			path = Context;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2F2F3051A9E45970030177D /* LoginViewController.swift in Sources */,
+				A223F55F1AA635B50092F066 /* LoginSegue.swift in Sources */,
 				A2756EEF1A9F40F900D892F7 /* BluetoothManager.swift in Sources */,
 				A2F2F3031A9E45970030177D /* AppDelegate.swift in Sources */,
 			);
