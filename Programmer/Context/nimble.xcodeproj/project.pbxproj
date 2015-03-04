@@ -8,7 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		A223F55F1AA635B50092F066 /* LoginSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A223F55E1AA635B50092F066 /* LoginSegue.swift */; };
+		A23896311AA75BCB0015F0DE /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23896301AA75BCB0015F0DE /* AccountManager.swift */; };
 		A2756EEF1A9F40F900D892F7 /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2756EEE1A9F40F900D892F7 /* BluetoothManager.swift */; };
+		A2E63A731AA7350B0060A4AD /* DevicesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E63A721AA7350B0060A4AD /* DevicesTableViewController.swift */; };
+		A2E63A7A1AA73D680060A4AD /* AddNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E63A791AA73D680060A4AD /* AddNewViewController.swift */; };
 		A2F2F3031A9E45970030177D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F2F3021A9E45970030177D /* AppDelegate.swift */; };
 		A2F2F3051A9E45970030177D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F2F3041A9E45970030177D /* LoginViewController.swift */; };
 		A2F2F3081A9E45970030177D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2F2F3061A9E45970030177D /* Main.storyboard */; };
@@ -31,8 +34,11 @@
 /* Begin PBXFileReference section */
 		537BC98BEE99D850C72FDF0F /* Pods-nimble.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nimble.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nimble/Pods-nimble.debug.xcconfig"; sourceTree = "<group>"; };
 		A223F55E1AA635B50092F066 /* LoginSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSegue.swift; sourceTree = "<group>"; };
+		A23896301AA75BCB0015F0DE /* AccountManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
 		A23F270D1AA60EBA008A859F /* Context-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Context-Bridging-Header.h"; sourceTree = "<group>"; };
 		A2756EEE1A9F40F900D892F7 /* BluetoothManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
+		A2E63A721AA7350B0060A4AD /* DevicesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevicesTableViewController.swift; sourceTree = "<group>"; };
+		A2E63A791AA73D680060A4AD /* AddNewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewViewController.swift; sourceTree = "<group>"; };
 		A2F2F2FD1A9E45970030177D /* nimble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nimble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2F2F3011A9E45970030177D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2F2F3021A9E45970030177D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +80,35 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A2E63A741AA735CC0060A4AD /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A2F2F3041A9E45970030177D /* LoginViewController.swift */,
+				A2E63A721AA7350B0060A4AD /* DevicesTableViewController.swift */,
+				A2E63A791AA73D680060A4AD /* AddNewViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		A2E63A751AA7364E0060A4AD /* BLE */ = {
+			isa = PBXGroup;
+			children = (
+				A2756EEE1A9F40F900D892F7 /* BluetoothManager.swift */,
+			);
+			name = BLE;
+			sourceTree = "<group>";
+		};
+		A2E63A761AA7365B0060A4AD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A2F2F3061A9E45970030177D /* Main.storyboard */,
+				A2F2F3091A9E45970030177D /* Images.xcassets */,
+				A2F2F30B1A9E45970030177D /* LaunchScreen.xib */,
+				A23F270D1AA60EBA008A859F /* Context-Bridging-Header.h */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		A2F2F2F41A9E45970030177D = {
 			isa = PBXGroup;
 			children = (
@@ -97,15 +132,13 @@
 		A2F2F2FF1A9E45970030177D /* Context */ = {
 			isa = PBXGroup;
 			children = (
+				A2E63A761AA7365B0060A4AD /* Resources */,
+				A2E63A751AA7364E0060A4AD /* BLE */,
+				A2E63A741AA735CC0060A4AD /* View Controllers */,
 				A2F2F3021A9E45970030177D /* AppDelegate.swift */,
-				A2F2F3041A9E45970030177D /* LoginViewController.swift */,
-				A2756EEE1A9F40F900D892F7 /* BluetoothManager.swift */,
-				A2F2F3061A9E45970030177D /* Main.storyboard */,
-				A2F2F3091A9E45970030177D /* Images.xcassets */,
-				A2F2F30B1A9E45970030177D /* LaunchScreen.xib */,
-				A2F2F3001A9E45970030177D /* Supporting Files */,
-				A23F270D1AA60EBA008A859F /* Context-Bridging-Header.h */,
+				A23896301AA75BCB0015F0DE /* AccountManager.swift */,
 				A223F55E1AA635B50092F066 /* LoginSegue.swift */,
+				A2F2F3001A9E45970030177D /* Supporting Files */,
 			);
 			path = Context;
 			sourceTree = "<group>";
@@ -311,7 +344,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2F2F3051A9E45970030177D /* LoginViewController.swift in Sources */,
+				A23896311AA75BCB0015F0DE /* AccountManager.swift in Sources */,
+				A2E63A7A1AA73D680060A4AD /* AddNewViewController.swift in Sources */,
 				A223F55F1AA635B50092F066 /* LoginSegue.swift in Sources */,
+				A2E63A731AA7350B0060A4AD /* DevicesTableViewController.swift in Sources */,
 				A2756EEF1A9F40F900D892F7 /* BluetoothManager.swift in Sources */,
 				A2F2F3031A9E45970030177D /* AppDelegate.swift in Sources */,
 			);

@@ -10,13 +10,21 @@ import UIKit
 import CoreBluetooth
 
 class BluetoothManager: NSObject, CBCentralManagerDelegate {
+    
+    class var sharedInstance : BluetoothManager {
+        struct Static {
+            static let instance : BluetoothManager = BluetoothManager()
+        }
+        return Static.instance
+    }
    
     let bluetoothManager:CBCentralManager!
     let userServiceUUID = "2220"
     let readCharacteristicUUID = "2221"
     let writeCharacteristicUUID = "2222"
 
-    var foundDevices = [CBPeripheral]()
+    var allFoundDevices = [CBPeripheral]()
+    var unregisteredDevices = [CBPeripheral]()
     
     override init() {
         super.init()
@@ -24,7 +32,7 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate {
     }
     
     func centralManager(central: CBCentralManager!, didDiscoverPeripheral peripheral: CBPeripheral!, advertisementData: [NSObject : AnyObject]!, RSSI: NSNumber!) {
-        foundDevices.append(peripheral)
+        allFoundDevices.append(peripheral)
         println(advertisementData)
         println(RSSI)
     }

@@ -2,12 +2,15 @@ PODS:
   - Bolts (1.1.3)
   - Facebook-iOS-SDK (3.23.0):
     - Bolts (~> 1.0)
+  - SSKeychain (1.2.2)
 
 DEPENDENCIES:
   - Facebook-iOS-SDK (~> 3.23)
+  - SSKeychain (~> 1.2)
 
 SPEC CHECKSUMS:
   Bolts: 3db0a875235e0c9042b013af13af0f00f79b102c
   Facebook-iOS-SDK: 3d65f685348b789e46a9aacf92bfa85b60b63755
+  SSKeychain: cc48bd3ad24fcd9125adb9e0d23dd50b8bbd08b9
 
 COCOAPODS: 0.36.0.rc.1

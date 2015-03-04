@@ -11,6 +11,8 @@ import UIKit
 class LoginViewController: UIViewController, FBLoginViewDelegate {
     
     @IBOutlet var loginButton : FBLoginView!
+    
+    let accountManager = AccountManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,13 +41,12 @@ class LoginViewController: UIViewController, FBLoginViewDelegate {
         println("Got user data")
         println("User name: \(user.name)")
         println("User ID: \(user.objectID)")
-        var userEmail = user.objectForKey("email") as String
-        println("User email: \(userEmail)")
+        accountManager.setUserFacebookDetails(user.objectID, facebookName: user.name)
     }
     
     func loginViewShowingLoggedInUser(loginView: FBLoginView!) {
         println("User logged in")
-        self.performSegueWithIdentifier(<#identifier: String?#>, sender: <#AnyObject?#>)
+        self.performSegueWithIdentifier("devicesScreen", sender: self)
     }
     
     func loginViewShowingLoggedOutUser(loginView: FBLoginView!) {
