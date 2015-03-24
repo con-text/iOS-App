@@ -46,7 +46,7 @@ class LoginViewController: UIViewController, FBLoginViewDelegate {
     
     func loginViewShowingLoggedInUser(loginView: FBLoginView!) {
         println("User logged in")
-        self.performSegueWithIdentifier("devicesScreen", sender: self)
+        self.performSegueWithIdentifier("setupScreen", sender: self)
     }
     
     func loginViewShowingLoggedOutUser(loginView: FBLoginView!) {

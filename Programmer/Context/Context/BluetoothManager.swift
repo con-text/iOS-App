@@ -11,6 +11,11 @@ import CoreBluetooth
 
 class BluetoothManager: NSObject, CBCentralManagerDelegate {
     
+    /*TODO: With the release of Xcode 6.3 change this to
+        class BluetoothManager {
+            static let sharedInstance = BluetoothManager()
+        }
+    */
     class var sharedInstance : BluetoothManager {
         struct Static {
             static let instance : BluetoothManager = BluetoothManager()
@@ -32,9 +37,26 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate {
     }
     
     func centralManager(central: CBCentralManager!, didDiscoverPeripheral peripheral: CBPeripheral!, advertisementData: [NSObject : AnyObject]!, RSSI: NSNumber!) {
-        allFoundDevices.append(peripheral)
-        println(advertisementData)
+        /* Make sure it's a Nimble device. This should really be done by looking for a nimble service UUID
+           but Benji doesn't want to change his code/is a bellend */
+        if (RSSI.integerValue < -35) || (RSSI.integerValue > 0) {
+            return
+        }
+        
         println(RSSI)
+        
+        if advertisementData["kCBAdvDataLocalName"] as NSString? == "Nimble" {
+            allFoundDevices.append(peripheral)
+            let manData:NSData? = advertisementData["kCBAdvDataManufacturerData"] as NSData?
+            let hexString = manData?.hexadecimalString()
+            println(hexString!)
+            if (hexString! == "Nimble") {
+                println("Found a device that isn't setup")
+                unregisteredDevices.append(peripheral);
+            } else {
+                println("Found a device")
+            }
+        }
     }
     
     func centralManagerDidUpdateState(central: CBCentralManager!) {

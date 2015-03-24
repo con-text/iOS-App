@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A223F55F1AA635B50092F066 /* LoginSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A223F55E1AA635B50092F066 /* LoginSegue.swift */; };
 		A23896311AA75BCB0015F0DE /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23896301AA75BCB0015F0DE /* AccountManager.swift */; };
+		A24B14BD1AC1B8CC00CF64A9 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24B14BC1AC1B8CC00CF64A9 /* SetupViewController.swift */; };
+		A24B14C11AC1DBCA00CF64A9 /* NSData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24B14C01AC1DBCA00CF64A9 /* NSData.swift */; };
 		A2756EEF1A9F40F900D892F7 /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2756EEE1A9F40F900D892F7 /* BluetoothManager.swift */; };
-		A2E63A731AA7350B0060A4AD /* DevicesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E63A721AA7350B0060A4AD /* DevicesTableViewController.swift */; };
-		A2E63A7A1AA73D680060A4AD /* AddNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E63A791AA73D680060A4AD /* AddNewViewController.swift */; };
+		A2D6EA6C1ABC7BC500107332 /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D6EA6B1ABC7BC500107332 /* ScanView.swift */; };
 		A2F2F3031A9E45970030177D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F2F3021A9E45970030177D /* AppDelegate.swift */; };
 		A2F2F3051A9E45970030177D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F2F3041A9E45970030177D /* LoginViewController.swift */; };
 		A2F2F3081A9E45970030177D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2F2F3061A9E45970030177D /* Main.storyboard */; };
@@ -33,12 +33,12 @@
 
 /* Begin PBXFileReference section */
 		537BC98BEE99D850C72FDF0F /* Pods-nimble.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nimble.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nimble/Pods-nimble.debug.xcconfig"; sourceTree = "<group>"; };
-		A223F55E1AA635B50092F066 /* LoginSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSegue.swift; sourceTree = "<group>"; };
 		A23896301AA75BCB0015F0DE /* AccountManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
 		A23F270D1AA60EBA008A859F /* Context-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Context-Bridging-Header.h"; sourceTree = "<group>"; };
+		A24B14BC1AC1B8CC00CF64A9 /* SetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
+		A24B14C01AC1DBCA00CF64A9 /* NSData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSData.swift; sourceTree = "<group>"; };
 		A2756EEE1A9F40F900D892F7 /* BluetoothManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
-		A2E63A721AA7350B0060A4AD /* DevicesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevicesTableViewController.swift; sourceTree = "<group>"; };
-		A2E63A791AA73D680060A4AD /* AddNewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewViewController.swift; sourceTree = "<group>"; };
+		A2D6EA6B1ABC7BC500107332 /* ScanView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanView.swift; sourceTree = "<group>"; };
 		A2F2F2FD1A9E45970030177D /* nimble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nimble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2F2F3011A9E45970030177D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2F2F3021A9E45970030177D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,12 +80,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A2D6EA6A1ABC7BB900107332 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A2D6EA6B1ABC7BC500107332 /* ScanView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		A2E63A741AA735CC0060A4AD /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				A2F2F3041A9E45970030177D /* LoginViewController.swift */,
-				A2E63A721AA7350B0060A4AD /* DevicesTableViewController.swift */,
-				A2E63A791AA73D680060A4AD /* AddNewViewController.swift */,
+				A24B14BC1AC1B8CC00CF64A9 /* SetupViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -134,11 +141,12 @@
 			children = (
 				A2E63A761AA7365B0060A4AD /* Resources */,
 				A2E63A751AA7364E0060A4AD /* BLE */,
+				A2D6EA6A1ABC7BB900107332 /* Views */,
 				A2E63A741AA735CC0060A4AD /* View Controllers */,
 				A2F2F3021A9E45970030177D /* AppDelegate.swift */,
 				A23896301AA75BCB0015F0DE /* AccountManager.swift */,
-				A223F55E1AA635B50092F066 /* LoginSegue.swift */,
 				A2F2F3001A9E45970030177D /* Supporting Files */,
+				A24B14C01AC1DBCA00CF64A9 /* NSData.swift */,
 			);
 			path = Context;
 			sourceTree = "<group>";
@@ -345,10 +353,10 @@
 			files = (
 				A2F2F3051A9E45970030177D /* LoginViewController.swift in Sources */,
 				A23896311AA75BCB0015F0DE /* AccountManager.swift in Sources */,
-				A2E63A7A1AA73D680060A4AD /* AddNewViewController.swift in Sources */,
-				A223F55F1AA635B50092F066 /* LoginSegue.swift in Sources */,
-				A2E63A731AA7350B0060A4AD /* DevicesTableViewController.swift in Sources */,
+				A2D6EA6C1ABC7BC500107332 /* ScanView.swift in Sources */,
 				A2756EEF1A9F40F900D892F7 /* BluetoothManager.swift in Sources */,
+				A24B14BD1AC1B8CC00CF64A9 /* SetupViewController.swift in Sources */,
+				A24B14C11AC1DBCA00CF64A9 /* NSData.swift in Sources */,
 				A2F2F3031A9E45970030177D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

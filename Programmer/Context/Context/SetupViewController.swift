@@ -1,25 +1,21 @@
 //
-//  AddNewViewController.swift
+//  SetupViewController.swift
 //  nimble
 //
-//  Created by Denis Ogun on 04/03/2015.
+//  Created by Denis Ogun on 24/03/2015.
 //  Copyright (c) 2015 Denis Ogun. All rights reserved.
 //
 
 import UIKit
 
-class AddNewViewController: UIViewController {
+class SetupViewController: UIViewController {
     
-    let accountManager = AccountManager()
-    
+    let bluetoothManager  = BluetoothManager.sharedInstance
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.title = "Add new"
-        
-        var accountDetails = accountManager.getUserFacebookDetails()
-        println("Facebook ID:\(accountDetails.0)")
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,6 +33,5 @@ class AddNewViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 
 }
