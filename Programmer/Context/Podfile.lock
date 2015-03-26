@@ -1,16 +1,19 @@
 PODS:
-  - Bolts (1.1.3)
-  - Facebook-iOS-SDK (3.23.0):
+  - Alamofire (1.1.4)
+  - Bolts (1.1.4)
+  - Facebook-iOS-SDK (3.23.2):
     - Bolts (~> 1.0)
   - SSKeychain (1.2.2)
 
 DEPENDENCIES:
-  - Facebook-iOS-SDK (~> 3.23)
+  - Alamofire (~> 1.1)
+  - Facebook-iOS-SDK (~> 3.23.1)
   - SSKeychain (~> 1.2)
 
 SPEC CHECKSUMS:
-  Bolts: 3db0a875235e0c9042b013af13af0f00f79b102c
-  Facebook-iOS-SDK: 3d65f685348b789e46a9aacf92bfa85b60b63755
+  Alamofire: 524225da382071ee3e6d0badd0ee4b4dc36740de
+  Bolts: dd9fb8433d67f5acc3b6b4d1379bbc5513d716c1
+  Facebook-iOS-SDK: cd87f0b2f0c1d9574b44e8fa2baacc275524bac3
   SSKeychain: cc48bd3ad24fcd9125adb9e0d23dd50b8bbd08b9
 
 COCOAPODS: 0.36.0

@@ -8,6 +8,8 @@
 
 import UIKit
 
+import FacebookSDK
+
 class LoginViewController: UIViewController, FBLoginViewDelegate {
     
     @IBOutlet var loginButton : FBLoginView!
@@ -41,12 +43,17 @@ class LoginViewController: UIViewController, FBLoginViewDelegate {
         println("Got user data")
         println("User name: \(user.name)")
         println("User ID: \(user.objectID)")
-        accountManager.setUserFacebookDetails(user.objectID, facebookName: user.name)
+        // Send the request to the server
+        NetworkManager().CreateUser(user.objectID) { [unowned self] userID in
+            println("Server user ID " + userID!)
+            self.accountManager.setUserDetails(user.objectID, facebookName: user.name, userID: userID!)
+            self.performSegueWithIdentifier("setupScreen", sender: self)
+        }
+        
     }
     
     func loginViewShowingLoggedInUser(loginView: FBLoginView!) {
         println("User logged in")
-        self.performSegueWithIdentifier("setupScreen", sender: self)
     }
     
     func loginViewShowingLoggedOutUser(loginView: FBLoginView!) {

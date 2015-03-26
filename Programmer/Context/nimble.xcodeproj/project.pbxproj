@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25EEF161583764B06A9573E4 /* Pods_nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0DF476AEF2FF277F7AC3CBE /* Pods_nimble.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		A23896311AA75BCB0015F0DE /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23896301AA75BCB0015F0DE /* AccountManager.swift */; };
 		A24B14BD1AC1B8CC00CF64A9 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24B14BC1AC1B8CC00CF64A9 /* SetupViewController.swift */; };
 		A24B14C11AC1DBCA00CF64A9 /* NSData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24B14C01AC1DBCA00CF64A9 /* NSData.swift */; };
 		A27392EC1AC4643200F76BF0 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27392EB1AC4643200F76BF0 /* String.swift */; };
+		A27392EF1AC4702700F76BF0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27392EE1AC4702700F76BF0 /* NetworkManager.swift */; };
 		A2756EEF1A9F40F900D892F7 /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2756EEE1A9F40F900D892F7 /* BluetoothManager.swift */; };
 		A2D6EA6C1ABC7BC500107332 /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D6EA6B1ABC7BC500107332 /* ScanView.swift */; };
 		A2F2F3031A9E45970030177D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F2F3021A9E45970030177D /* AppDelegate.swift */; };
@@ -19,7 +21,6 @@
 		A2F2F30A1A9E45970030177D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2F2F3091A9E45970030177D /* Images.xcassets */; };
 		A2F2F30D1A9E45970030177D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2F2F30B1A9E45970030177D /* LaunchScreen.xib */; };
 		A2F2F3191A9E45970030177D /* ContextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F2F3181A9E45970030177D /* ContextTests.swift */; };
-		FD735C597B179D3D2BD1FECF /* libPods-nimble.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EEA38E1368E16BF35944BBBB /* libPods-nimble.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,7 @@
 		A24B14BC1AC1B8CC00CF64A9 /* SetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
 		A24B14C01AC1DBCA00CF64A9 /* NSData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSData.swift; sourceTree = "<group>"; };
 		A27392EB1AC4643200F76BF0 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		A27392EE1AC4702700F76BF0 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		A2756EEE1A9F40F900D892F7 /* BluetoothManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
 		A2D6EA6B1ABC7BC500107332 /* ScanView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanView.swift; sourceTree = "<group>"; };
 		A2F2F2FD1A9E45970030177D /* nimble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nimble.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,8 +53,8 @@
 		A2F2F3121A9E45970030177D /* nimbleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nimbleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2F2F3171A9E45970030177D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2F2F3181A9E45970030177D /* ContextTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextTests.swift; sourceTree = "<group>"; };
+		B0DF476AEF2FF277F7AC3CBE /* Pods_nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B69866393830279F57C4DBB5 /* Pods-nimble.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nimble.release.xcconfig"; path = "Pods/Target Support Files/Pods-nimble/Pods-nimble.release.xcconfig"; sourceTree = "<group>"; };
-		EEA38E1368E16BF35944BBBB /* libPods-nimble.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-nimble.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD735C597B179D3D2BD1FECF /* libPods-nimble.a in Frameworks */,
+				25EEF161583764B06A9573E4 /* Pods_nimble.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,9 +79,18 @@
 		15A7ACB2C9A76849DF02E3A3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EEA38E1368E16BF35944BBBB /* libPods-nimble.a */,
+				B0DF476AEF2FF277F7AC3CBE /* Pods_nimble.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A27392ED1AC4701800F76BF0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A24B14C01AC1DBCA00CF64A9 /* NSData.swift */,
+				A27392EB1AC4643200F76BF0 /* String.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		A2D6EA6A1ABC7BB900107332 /* Views */ = {
@@ -143,13 +154,13 @@
 			children = (
 				A2E63A761AA7365B0060A4AD /* Resources */,
 				A2E63A751AA7364E0060A4AD /* BLE */,
+				A27392ED1AC4701800F76BF0 /* Extensions */,
 				A2D6EA6A1ABC7BB900107332 /* Views */,
 				A2E63A741AA735CC0060A4AD /* View Controllers */,
 				A2F2F3021A9E45970030177D /* AppDelegate.swift */,
 				A23896301AA75BCB0015F0DE /* AccountManager.swift */,
+				A27392EE1AC4702700F76BF0 /* NetworkManager.swift */,
 				A2F2F3001A9E45970030177D /* Supporting Files */,
-				A24B14C01AC1DBCA00CF64A9 /* NSData.swift */,
-				A27392EB1AC4643200F76BF0 /* String.swift */,
 			);
 			path = Context;
 			sourceTree = "<group>";
@@ -202,6 +213,7 @@
 				A2F2F2FA1A9E45970030177D /* Frameworks */,
 				A2F2F2FB1A9E45970030177D /* Resources */,
 				3EB61F699C19C7032D1EFE12 /* Copy Pods Resources */,
+				8CA80D199AA914AA0D207F8D /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -304,6 +316,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-nimble/Pods-nimble-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		8CA80D199AA914AA0D207F8D /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-nimble/Pods-nimble-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A23F27111AA61949008A859F /* Increment Version */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 8;
@@ -354,6 +381,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A27392EF1AC4702700F76BF0 /* NetworkManager.swift in Sources */,
 				A2F2F3051A9E45970030177D /* LoginViewController.swift in Sources */,
 				A23896311AA75BCB0015F0DE /* AccountManager.swift in Sources */,
 				A2D6EA6C1ABC7BC500107332 /* ScanView.swift in Sources */,

@@ -6,11 +6,14 @@
 //  Copyright (c) 2015 Denis Ogun. All rights reserved.
 //
 
+import SSKeychain
+
 class AccountManager: NSObject {
     
     let service = "com.nimble.keychain"
     let accountID = "facebookID"
     let accountName = "facebookName"
+    let accountUserID = "userID"
     
     override init() {
         super.init()
@@ -30,8 +33,9 @@ class AccountManager: NSObject {
         }
     }
     
-    func setUserFacebookDetails(facebookID: String, facebookName: String) {
+    func setUserDetails(facebookID: String, facebookName: String, userID: String) {
         SSKeychain.setPassword(facebookID, forService: service, account: accountID)
         SSKeychain.setPassword(facebookName, forService: service, account: accountName)
+        SSKeychain.setPassword(userID, forService:service, account: accountUserID)
     }
 }

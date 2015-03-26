@@ -1,9 +1,12 @@
 # Uncomment this line to define a global platform for your project
 platform :ios, '8.0'
 
+use_frameworks!
+
 target 'nimble' do
-pod 'Facebook-iOS-SDK', '~> 3.23'
+pod 'Facebook-iOS-SDK', '~> 3.23.1'
 pod 'SSKeychain', '~> 1.2'
+pod 'Alamofire', '~> 1.1'
 end
 
 target 'nimbleTests' do
