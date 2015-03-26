@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreBluetooth
 
-class SetupViewController: UIViewController {
+class SetupViewController: UIViewController, BluetoothManagerProtocol {
     
     let bluetoothManager  = BluetoothManager.sharedInstance
 
@@ -23,6 +24,9 @@ class SetupViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func discoveredNewDevice(device: CBPeripheral!, readChannel: CBCharacteristic?, writeChannel: CBCharacteristic?, disconnectChannel: CBCharacteristic?) {
+        println("Connected to new device")
+    }
 
     /*
     // MARK: - Navigation

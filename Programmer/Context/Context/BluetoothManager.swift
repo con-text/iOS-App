@@ -9,7 +9,19 @@
 import UIKit
 import CoreBluetooth
 
-class BluetoothManager: NSObject, CBCentralManagerDelegate {
+@objc protocol BluetoothManagerProtocol {
+    optional func discoveredNewDevice(device: CBPeripheral!,
+                        readChannel: CBCharacteristic?,
+                       writeChannel: CBCharacteristic?,
+                  disconnectChannel: CBCharacteristic?)
+}
+
+enum DeviceType {
+    case Setup
+    case NotSetup
+}
+
+class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     
     /*TODO: With the release of Xcode 6.3 change this to
         class BluetoothManager {
@@ -27,9 +39,10 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate {
     let userServiceUUID = "2220"
     let readCharacteristicUUID = "2221"
     let writeCharacteristicUUID = "2222"
+    let disconnectCharacteristicUUID = "2223"
 
-    var allFoundDevices = [CBPeripheral]()
-    var unregisteredDevices = [CBPeripheral]()
+    var currentDevice:(CBPeripheral, DeviceType)?
+    var delegate:BluetoothManagerProtocol! = nil
     
     override init() {
         super.init()
@@ -45,16 +58,17 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate {
         
         println(RSSI)
         
+        // If we see a device called Nimble that hasn't been setup
         if advertisementData["kCBAdvDataLocalName"] as NSString? == "Nimble" {
-            allFoundDevices.append(peripheral)
             let manData:NSData? = advertisementData["kCBAdvDataManufacturerData"] as NSData?
             let hexString = manData?.hexadecimalString()
-            println(hexString!)
             if (hexString! == "Nimble") {
-                println("Found a device that isn't setup")
-                unregisteredDevices.append(peripheral);
+                NSLog("Found a device that isn't setup")
+                currentDevice = (peripheral, .NotSetup)
+                bluetoothManager.stopScan()
+                bluetoothManager.connectPeripheral(peripheral, options: nil)
             } else {
-                println("Found a device")
+                NSLog("Found a device")
             }
         }
     }
@@ -69,5 +83,53 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate {
             default:
                 println("Unhandled bluetooth status")
         }
+    }
+    
+    func centralManager(central: CBCentralManager!, didConnectPeripheral peripheral: CBPeripheral!) {
+        peripheral.delegate = self
+        peripheral.discoverServices([CBUUID(string: userServiceUUID)])
+    }
+    
+    func peripheral(peripheral: CBPeripheral!, didDiscoverServices error: NSError!) {
+        // Get the read and write characteristic channels
+        for service in peripheral.services as [CBService] {
+            if service.UUID.UUIDString == userServiceUUID {
+                peripheral.discoverCharacteristics([CBUUID(string: readCharacteristicUUID),
+                                                    CBUUID(string: writeCharacteristicUUID),
+                                                    CBUUID(string: disconnectCharacteristicUUID)], forService: service)
+            }
+        }
+    }
+    
+    func peripheral(peripheral: CBPeripheral!, didDiscoverCharacteristicsForService service: CBService!, error: NSError!) {
+        
+        // Communication channels
+        var readChannel:CBCharacteristic?
+        var writeChannel:CBCharacteristic?
+        var disconnectChannel:CBCharacteristic?
+        
+        
+        for characteristic in service.characteristics as [CBCharacteristic] {
+            switch characteristic.UUID.UUIDString
+            {
+                case readCharacteristicUUID:
+                    readChannel = characteristic
+                    break
+                
+                case writeCharacteristicUUID:
+                    writeChannel = characteristic
+                    break
+                
+                case disconnectCharacteristicUUID:
+                    disconnectChannel = characteristic
+                    break
+                
+                default:
+                    // Don't do anything
+                    break
+            }
+        }
+        
+        delegate!.discoveredNewDevice!(peripheral, readChannel: readChannel!, writeChannel: writeChannel!, disconnectChannel: disconnectChannel!)
     }
 }

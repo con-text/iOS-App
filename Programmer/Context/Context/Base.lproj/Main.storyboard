@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -48,17 +49,85 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BH7-Bt-tui" customClass="ScanView" customModule="nimble" customModuleProvider="target">
-                                <rect key="frame" x="30" y="77" width="260" height="260"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fiv-2j-qBQ" userLabel="Dummy View">
+                                <rect key="frame" x="0.0" y="20" width="320" height="528"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o6p-aJ-usU">
+                                        <rect key="frame" x="0.0" y="-2" width="320" height="573"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZpU-x8-FVH" userLabel="Content View">
+                                                <rect key="frame" x="0.0" y="0.0" width="969.5" height="528"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fh2-fp-ivk" userLabel="Step 1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="970" height="528"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BH7-Bt-tui" customClass="ScanView" customModule="nimble" customModuleProvider="target">
+                                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </view>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Searching for device..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XQw-L2-6bG">
+                                                                <rect key="frame" x="158" y="122" width="171" height="21"/>
+                                                                <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
+                                                                <color key="textColor" red="0.58234690656565657" green="0.58234690656565657" blue="0.58234690656565657" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Step 1 " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SUi-Xp-8Q2">
+                                                                <rect key="frame" x="192" y="122" width="102" height="21"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="fh2-fp-ivk" firstAttribute="leading" secondItem="ZpU-x8-FVH" secondAttribute="leading" id="8DH-77-xZb"/>
+                                                    <constraint firstItem="fh2-fp-ivk" firstAttribute="width" secondItem="ZpU-x8-FVH" secondAttribute="width" id="c7h-KX-rcP"/>
+                                                    <constraint firstItem="fh2-fp-ivk" firstAttribute="top" secondItem="ZpU-x8-FVH" secondAttribute="top" id="ijU-H6-mIV"/>
+                                                    <constraint firstItem="fh2-fp-ivk" firstAttribute="height" secondItem="ZpU-x8-FVH" secondAttribute="height" id="q4v-5d-flx"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="ZpU-x8-FVH" firstAttribute="leading" secondItem="o6p-aJ-usU" secondAttribute="leading" id="94Q-zZ-b6V"/>
+                                            <constraint firstItem="ZpU-x8-FVH" firstAttribute="top" secondItem="o6p-aJ-usU" secondAttribute="top" id="HVz-eh-zV8"/>
+                                            <constraint firstAttribute="bottom" secondItem="ZpU-x8-FVH" secondAttribute="bottom" id="Mgj-ax-A8s"/>
+                                            <constraint firstAttribute="trailing" secondItem="ZpU-x8-FVH" secondAttribute="trailing" id="SL6-KY-80k"/>
+                                        </constraints>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="o6p-aJ-usU" firstAttribute="leading" secondItem="fiv-2j-qBQ" secondAttribute="leading" id="8OY-ka-nDC"/>
+                                    <constraint firstAttribute="width" secondItem="ZpU-x8-FVH" secondAttribute="width" multiplier="0.33" id="BNP-iJ-0QQ"/>
+                                    <constraint firstItem="fh2-fp-ivk" firstAttribute="height" secondItem="fiv-2j-qBQ" secondAttribute="height" id="DHi-Jm-ATG"/>
+                                    <constraint firstAttribute="bottom" secondItem="o6p-aJ-usU" secondAttribute="bottom" constant="-43" id="PAz-fg-8UB"/>
+                                    <constraint firstItem="fh2-fp-ivk" firstAttribute="width" secondItem="fiv-2j-qBQ" secondAttribute="width" id="Z8g-I2-i85"/>
+                                    <constraint firstAttribute="trailing" secondItem="o6p-aJ-usU" secondAttribute="trailing" id="j2H-yc-hAR"/>
+                                    <constraint firstAttribute="height" secondItem="ZpU-x8-FVH" secondAttribute="height" id="tL4-gM-SO9"/>
+                                    <constraint firstItem="o6p-aJ-usU" firstAttribute="top" secondItem="fiv-2j-qBQ" secondAttribute="top" constant="-2" id="yrX-fF-9B2"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="DHi-Jm-ATG"/>
+                                        <exclude reference="Z8g-I2-i85"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="fiv-2j-qBQ" secondAttribute="centerX" id="EBq-5y-Gh8"/>
+                            <constraint firstItem="fiv-2j-qBQ" firstAttribute="top" secondItem="RFb-Dh-VMD" secondAttribute="bottom" id="VtR-LQ-6nA"/>
+                            <constraint firstItem="fiv-2j-qBQ" firstAttribute="leading" secondItem="736-BF-4V4" secondAttribute="leading" id="d1U-C8-Jnx"/>
+                            <constraint firstAttribute="centerY" secondItem="fiv-2j-qBQ" secondAttribute="centerY" id="i5U-hc-9NC"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tdt-UG-waP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1130.5" y="307.5"/>
+            <point key="canvasLocation" x="1130" y="307"/>
         </scene>
     </scenes>
     <resources>
