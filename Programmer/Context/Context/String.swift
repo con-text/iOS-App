@@ -17,14 +17,14 @@ extension String {
         
         // Send the first packet
         var currentSubMessage = "1"
-        currentSubMessage += self.substringWithRange(Range<String.Index>(start: uppercase.startIndex, end: advance(uppercase.startIndex, 19)))
+        currentSubMessage += self[0...19]
         
         messages.append(currentSubMessage)
         
         // Create the data packets
-        for i in 1...numberOfMessagesToSend {
+        for i in 0..<numberOfMessagesToSend {
             currentSubMessage = "2"
-            currentSubMessage += self.substringWithRange(Range<String.Index>(start: advance(uppercase.startIndex, i*19), end: advance(uppercase.startIndex, (i*19)+19)))
+            currentSubMessage += self[i*19...(i*19)+19]
             messages.append(currentSubMessage)
         }
         
@@ -35,4 +35,20 @@ extension String {
         return messages
     }
     
+    subscript(integerIndex: Int) -> Character {
+        let index = advance(startIndex, integerIndex)
+        return self[index]
+    }
+    
+    subscript(integerRange: Range<Int>) -> String {
+        var rangeEnd:Int? = nil
+        if (integerRange.endIndex > self.utf16Count) {
+            rangeEnd = self.utf16Count
+        }
+        
+        let start = advance(startIndex, integerRange.startIndex)
+        let end = advance(startIndex, rangeEnd ?? integerRange.endIndex)
+        let range = start..<end
+        return self[range]
+    }
 }

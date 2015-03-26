@@ -10,7 +10,7 @@ import UIKit
 import CoreBluetooth
 
 @objc protocol BluetoothManagerProtocol {
-    optional func discoveredNewDevice(device: CBPeripheral!,
+    optional func discoveredNewDevice(peripheral: CBPeripheral!,
                         readChannel: CBCharacteristic?,
                        writeChannel: CBCharacteristic?,
                   disconnectChannel: CBCharacteristic?)
@@ -36,10 +36,10 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
     }
    
     let bluetoothManager:CBCentralManager!
-    let userServiceUUID = "2220"
-    let readCharacteristicUUID = "2221"
-    let writeCharacteristicUUID = "2222"
-    let disconnectCharacteristicUUID = "2223"
+    let notSetupUUID = "4E1F1FB0-95C9-4C54-88CB-6B9F3192CDD1"
+    let notSetupReadCharacteristicUUID = "4E1F1FB1-95C9-4C54-88CB-6B9F3192CDD1"
+    let notSetupWriteCharacteristicUUID = "4E1F1FB2-95C9-4C54-88CB-6B9F3192CDD1"
+    let notSetupDisconnectCharacteristicUUID = "4E1F1FB3-95C9-4C54-88CB-6B9F3192CDD1"
 
     var currentDevice:(CBPeripheral, DeviceType)?
     var delegate:BluetoothManagerProtocol! = nil
@@ -77,7 +77,7 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
         switch central.state {
             case .PoweredOn:
                 var scanDictionary = [CBCentralManagerScanOptionAllowDuplicatesKey: true];
-                bluetoothManager.scanForPeripheralsWithServices([CBUUID(string: userServiceUUID)], options:scanDictionary)
+                bluetoothManager.scanForPeripheralsWithServices([CBUUID(string: notSetupUUID)], options:scanDictionary)
             case .Unsupported, .PoweredOff, .Resetting, .Unauthorized:
                 println("Error with bluetooth")
             default:
@@ -87,16 +87,16 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
     
     func centralManager(central: CBCentralManager!, didConnectPeripheral peripheral: CBPeripheral!) {
         peripheral.delegate = self
-        peripheral.discoverServices([CBUUID(string: userServiceUUID)])
+        peripheral.discoverServices([CBUUID(string: notSetupUUID)])
     }
     
     func peripheral(peripheral: CBPeripheral!, didDiscoverServices error: NSError!) {
         // Get the read and write characteristic channels
         for service in peripheral.services as [CBService] {
-            if service.UUID.UUIDString == userServiceUUID {
-                peripheral.discoverCharacteristics([CBUUID(string: readCharacteristicUUID),
-                                                    CBUUID(string: writeCharacteristicUUID),
-                                                    CBUUID(string: disconnectCharacteristicUUID)], forService: service)
+            if service.UUID.UUIDString == notSetupUUID {
+                peripheral.discoverCharacteristics([CBUUID(string: notSetupReadCharacteristicUUID),
+                                                    CBUUID(string: notSetupWriteCharacteristicUUID),
+                                                    CBUUID(string: notSetupDisconnectCharacteristicUUID)], forService: service)
             }
         }
     }
@@ -112,15 +112,16 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
         for characteristic in service.characteristics as [CBCharacteristic] {
             switch characteristic.UUID.UUIDString
             {
-                case readCharacteristicUUID:
+                case notSetupReadCharacteristicUUID:
+                    peripheral.setNotifyValue(true, forCharacteristic: characteristic)
                     readChannel = characteristic
                     break
                 
-                case writeCharacteristicUUID:
+                case notSetupWriteCharacteristicUUID:
                     writeChannel = characteristic
                     break
                 
-                case disconnectCharacteristicUUID:
+                case notSetupDisconnectCharacteristicUUID:
                     disconnectChannel = characteristic
                     break
                 
@@ -130,6 +131,6 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
             }
         }
         
-        delegate!.discoveredNewDevice!(peripheral, readChannel: readChannel!, writeChannel: writeChannel!, disconnectChannel: disconnectChannel!)
+        delegate?.discoveredNewDevice?(peripheral, readChannel: readChannel!, writeChannel: writeChannel!, disconnectChannel: disconnectChannel!)
     }
 }

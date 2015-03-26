@@ -38,4 +38,16 @@ class AccountManager: NSObject {
         SSKeychain.setPassword(facebookName, forService: service, account: accountName)
         SSKeychain.setPassword(userID, forService:service, account: accountUserID)
     }
+    
+    func getUserID() -> String? {
+        var err: NSError?
+        
+        var userID = SSKeychain.passwordForService(service, account: accountUserID, error: &err)
+        
+        if let actualError = err {
+            return nil
+        } else {
+            return userID
+        }
+    }
 }

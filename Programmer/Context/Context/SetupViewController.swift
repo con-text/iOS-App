@@ -9,7 +9,7 @@
 import UIKit
 import CoreBluetooth
 
-class SetupViewController: UIViewController, BluetoothManagerProtocol {
+class SetupViewController: UIViewController, BluetoothManagerProtocol, CBPeripheralDelegate {
     
     let bluetoothManager  = BluetoothManager.sharedInstance
 
@@ -17,6 +17,7 @@ class SetupViewController: UIViewController, BluetoothManagerProtocol {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        bluetoothManager.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,8 +25,19 @@ class SetupViewController: UIViewController, BluetoothManagerProtocol {
         // Dispose of any resources that can be recreated.
     }
     
-    func discoveredNewDevice(device: CBPeripheral!, readChannel: CBCharacteristic?, writeChannel: CBCharacteristic?, disconnectChannel: CBCharacteristic?) {
+    func discoveredNewDevice(peripheral: CBPeripheral!, readChannel: CBCharacteristic?, writeChannel: CBCharacteristic?, disconnectChannel: CBCharacteristic?) {
+        peripheral.delegate = self
         println("Connected to new device")
+        
+        var dataToSend:[String] = "Setup".formatMessageForRFDuino()
+        
+        let userID = AccountManager().getUserID()
+        dataToSend += userID!.formatMessageForRFDuino()
+        
+        for data in dataToSend {
+            println("Sending " + data)
+            peripheral.writeValue(data.dataUsingEncoding(NSUTF8StringEncoding), forCharacteristic: writeChannel, type: .WithoutResponse)
+        }
     }
 
     /*
