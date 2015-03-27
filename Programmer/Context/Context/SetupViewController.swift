@@ -11,7 +11,11 @@ import CoreBluetooth
 
 class SetupViewController: UIViewController, BluetoothManagerProtocol, CBPeripheralDelegate {
     
-    let bluetoothManager  = BluetoothManager.sharedInstance
+    let bluetoothManager = BluetoothManager.sharedInstance
+    
+    var writeChannel:CBCharacteristic?
+    var disconnectChannel:CBCharacteristic?
+    var currentPeripheral:CBPeripheral?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,17 +30,38 @@ class SetupViewController: UIViewController, BluetoothManagerProtocol, CBPeriphe
     }
     
     func discoveredNewDevice(peripheral: CBPeripheral!, readChannel: CBCharacteristic?, writeChannel: CBCharacteristic?, disconnectChannel: CBCharacteristic?) {
-        peripheral.delegate = self
-        println("Connected to new device")
+        // Grab references to the objects
+        self.writeChannel = writeChannel
+        self.disconnectChannel = disconnectChannel
+        self.currentPeripheral = peripheral
         
-        var dataToSend:[String] = "Setup".formatMessageForRFDuino()
+        println("Connected to a new device")
+        let dataToSend:[String] = "Setup".formatMessageForRFDuino()
         
-        let userID = AccountManager().getUserID()
-        dataToSend += userID!.formatMessageForRFDuino()
-        
+        sendData(dataToSend)
+    }
+    
+    func receivedMessageFromDevice(peripheral: CBPeripheral, message: String) {
+        println("Received message " + message)
+        if (message == "OK") {
+            let userID = AccountManager().getUserID()
+            let dataToSend = userID!.formatMessageForRFDuino()
+            sendData(dataToSend)
+        } else {
+            // This will be the serial number from the device
+            NetworkManager().linkDevice(message, userID: AccountManager().getUserID()!, completionHandler: { (result) -> () in
+                println(result)
+                if (result == "Success") {
+                    self.sendData("OK".formatMessageForRFDuino())
+                }
+            })
+        }
+    }
+    
+    func sendData(dataToSend:[String]) {
         for data in dataToSend {
             println("Sending " + data)
-            peripheral.writeValue(data.dataUsingEncoding(NSUTF8StringEncoding), forCharacteristic: writeChannel, type: .WithoutResponse)
+            currentPeripheral?.writeValue(data.dataUsingEncoding(NSUTF8StringEncoding), forCharacteristic: self.writeChannel, type:.WithoutResponse)
         }
     }
 

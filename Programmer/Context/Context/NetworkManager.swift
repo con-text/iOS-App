@@ -13,7 +13,7 @@ class NetworkManager {
     
     let baseURLString = "http://contexte.herokuapp.com"
     
-    func CreateUser(facebookID: String, completionHandler: (userID: String?) -> ()) {
+    func createUser(facebookID: String, completionHandler: (userID: String?) -> ()) {
         // Create the request body
         let parameters = [
             "fbId" : facebookID
@@ -24,6 +24,20 @@ class NetworkManager {
             .responseString { (_, _, string, _) in
                 completionHandler(userID: string)
             }
+    }
+    
+    func linkDevice(deviceID: String, userID: String, completionHandler: (result: String?) -> ()) {
+        // Create the request body
+        let parameters = [
+            "deviceId" : deviceID,
+            "userId" : userID
+        ]
+        
+        // Send the request
+        Alamofire.request(.POST, baseURLString + "/users", parameters: parameters, encoding: .JSON)
+            .responseString { (_, _, string, _) in
+                completionHandler(result: string)
+        }
     }
 }
 

@@ -17,14 +17,14 @@ extension String {
         
         // Send the first packet
         var currentSubMessage = "1"
-        currentSubMessage += self[0...19]
+        currentSubMessage += uppercase[0...19]
         
         messages.append(currentSubMessage)
         
         // Create the data packets
         for i in 0..<numberOfMessagesToSend {
             currentSubMessage = "2"
-            currentSubMessage += self[i*19...(i*19)+19]
+            currentSubMessage += uppercase[i*19...(i*19)+19]
             messages.append(currentSubMessage)
         }
         

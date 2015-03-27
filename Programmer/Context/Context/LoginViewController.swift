@@ -44,7 +44,7 @@ class LoginViewController: UIViewController, FBLoginViewDelegate {
         println("User name: \(user.name)")
         println("User ID: \(user.objectID)")
         // Send the request to the server
-        NetworkManager().CreateUser(user.objectID) { [unowned self] userID in
+        NetworkManager().createUser(user.objectID) { [unowned self] userID in
             println("Server user ID " + userID!)
             self.accountManager.setUserDetails(user.objectID, facebookName: user.name, userID: userID!)
             self.performSegueWithIdentifier("setupScreen", sender: self)

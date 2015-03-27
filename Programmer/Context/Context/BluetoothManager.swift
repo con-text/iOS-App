@@ -14,6 +14,8 @@ import CoreBluetooth
                         readChannel: CBCharacteristic?,
                        writeChannel: CBCharacteristic?,
                   disconnectChannel: CBCharacteristic?)
+    
+    optional func receivedMessageFromDevice(peripheral: CBPeripheral, message: String)
 }
 
 enum DeviceType {
@@ -43,6 +45,8 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
 
     var currentDevice:(CBPeripheral, DeviceType)?
     var delegate:BluetoothManagerProtocol! = nil
+    
+    var readString:String = ""
     
     override init() {
         super.init()
@@ -86,10 +90,12 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
     }
     
     func centralManager(central: CBCentralManager!, didConnectPeripheral peripheral: CBPeripheral!) {
+        println("Connected to peripheral")
         peripheral.delegate = self
         peripheral.discoverServices([CBUUID(string: notSetupUUID)])
     }
     
+    // MARK: CBPeripheral
     func peripheral(peripheral: CBPeripheral!, didDiscoverServices error: NSError!) {
         // Get the read and write characteristic channels
         for service in peripheral.services as [CBService] {
@@ -132,5 +138,20 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
         }
         
         delegate?.discoveredNewDevice?(peripheral, readChannel: readChannel!, writeChannel: writeChannel!, disconnectChannel: disconnectChannel!)
+    }
+    
+    func peripheral(peripheral: CBPeripheral!, didUpdateValueForCharacteristic characteristic: CBCharacteristic!, error: NSError!) {
+        
+        let dataString = NSString(data: characteristic.value, encoding: NSUTF8StringEncoding)
+        let messageType = dataString!.substringToIndex(1)
+        
+        if (messageType == "1") {
+            readString = ""
+            readString += dataString!.substringFromIndex(1)
+        } else if (messageType == "2"){
+            readString += dataString!.substringFromIndex(1)
+        } else if (messageType == "3" && (readString.isEmpty == false)) {
+            delegate?.receivedMessageFromDevice?(peripheral, message: readString)
+        }
     }
 }
