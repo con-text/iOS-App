@@ -34,7 +34,7 @@ class NetworkManager {
         ]
         
         // Send the request
-        Alamofire.request(.POST, baseURLString + "/users", parameters: parameters, encoding: .JSON)
+        Alamofire.request(.POST, baseURLString + "/devices/associate", parameters: parameters, encoding: .JSON)
             .responseString { (_, _, string, _) in
                 completionHandler(result: string)
         }
