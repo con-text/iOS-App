@@ -10,9 +10,11 @@ import UIKit
 
 import FacebookSDK
 
-class LoginViewController: UIViewController, FBLoginViewDelegate {
+class LoginViewController: UIViewController, FBLoginViewDelegate, UIScrollViewDelegate {
     
     @IBOutlet var loginButton : FBLoginView!
+    @IBOutlet var scrollView : UIScrollView!
+    @IBOutlet var pageControl : UIPageControl!
     
     let accountManager = AccountManager()
 
@@ -58,6 +60,10 @@ class LoginViewController: UIViewController, FBLoginViewDelegate {
     
     func loginViewShowingLoggedOutUser(loginView: FBLoginView!) {
         println("User logged out")
+    }
+    
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        pageControl.currentPage = scrollView.currentPage()
     }
 }
 

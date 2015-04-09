@@ -18,6 +18,7 @@
 		A2D6EA6C1ABC7BC500107332 /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D6EA6B1ABC7BC500107332 /* ScanView.swift */; };
 		A2F19C5E1AD6CF18002A63AA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2F19C5D1AD6CF18002A63AA /* QuartzCore.framework */; };
 		A2F19C601AD6E908002A63AA /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F19C5F1AD6E908002A63AA /* UIColor.swift */; };
+		A2F19C621AD70E71002A63AA /* UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F19C611AD70E71002A63AA /* UIScrollView.swift */; };
 		A2F2F3031A9E45970030177D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F2F3021A9E45970030177D /* AppDelegate.swift */; };
 		A2F2F3051A9E45970030177D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F2F3041A9E45970030177D /* LoginViewController.swift */; };
 		A2F2F3081A9E45970030177D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2F2F3061A9E45970030177D /* Main.storyboard */; };
@@ -49,6 +50,7 @@
 		A2D6EA6B1ABC7BC500107332 /* ScanView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanView.swift; sourceTree = "<group>"; };
 		A2F19C5D1AD6CF18002A63AA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A2F19C5F1AD6E908002A63AA /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		A2F19C611AD70E71002A63AA /* UIScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScrollView.swift; sourceTree = "<group>"; };
 		A2F2F2FD1A9E45970030177D /* nimble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nimble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2F2F3011A9E45970030177D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2F2F3021A9E45970030177D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				A24B14C01AC1DBCA00CF64A9 /* NSData.swift */,
 				A27392EB1AC4643200F76BF0 /* String.swift */,
 				A2F19C5F1AD6E908002A63AA /* UIColor.swift */,
+				A2F19C611AD70E71002A63AA /* UIScrollView.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 				A26F23FC1AC5AF090048082A /* AccountViewController.swift in Sources */,
 				A2F19C601AD6E908002A63AA /* UIColor.swift in Sources */,
 				A24B14C11AC1DBCA00CF64A9 /* NSData.swift in Sources */,
+				A2F19C621AD70E71002A63AA /* UIScrollView.swift in Sources */,
 				A27392EC1AC4643200F76BF0 /* String.swift in Sources */,
 				A2F2F3031A9E45970030177D /* AppDelegate.swift in Sources */,
 			);

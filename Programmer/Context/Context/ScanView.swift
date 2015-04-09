@@ -33,7 +33,7 @@ class ScanView: UIView {
         CGContextStrokePath(context)
         CGContextAddArc(context, CGRectGetMidX(bounds), CGRectGetMidY(bounds), 80.0, 0, CGFloat(M_PI*2), 1)
         CGContextStrokePath(context)
-        color = UIColor(netHex: 0x9e9e9f).getRGB()
+        color = UIColor(netHex: 0x7e7e7f).getRGB()
         CGContextSetRGBStrokeColor(context, color.red, color.green, color.blue, 1.0)
         CGContextAddArc(context, CGRectGetMidX(bounds), CGRectGetMidY(bounds), 65.0, 0, CGFloat(M_PI*2), 1)
         CGContextStrokePath(context)
