@@ -11,6 +11,7 @@
 		A23896311AA75BCB0015F0DE /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23896301AA75BCB0015F0DE /* AccountManager.swift */; };
 		A24B14BD1AC1B8CC00CF64A9 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24B14BC1AC1B8CC00CF64A9 /* SetupViewController.swift */; };
 		A24B14C11AC1DBCA00CF64A9 /* NSData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24B14C01AC1DBCA00CF64A9 /* NSData.swift */; };
+		A26F23FC1AC5AF090048082A /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26F23FB1AC5AF090048082A /* AccountViewController.swift */; };
 		A27392EC1AC4643200F76BF0 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27392EB1AC4643200F76BF0 /* String.swift */; };
 		A27392EF1AC4702700F76BF0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27392EE1AC4702700F76BF0 /* NetworkManager.swift */; };
 		A2756EEF1A9F40F900D892F7 /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2756EEE1A9F40F900D892F7 /* BluetoothManager.swift */; };
@@ -39,6 +40,7 @@
 		A23F270D1AA60EBA008A859F /* Context-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Context-Bridging-Header.h"; sourceTree = "<group>"; };
 		A24B14BC1AC1B8CC00CF64A9 /* SetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
 		A24B14C01AC1DBCA00CF64A9 /* NSData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSData.swift; sourceTree = "<group>"; };
+		A26F23FB1AC5AF090048082A /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		A27392EB1AC4643200F76BF0 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		A27392EE1AC4702700F76BF0 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		A2756EEE1A9F40F900D892F7 /* BluetoothManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			children = (
 				A2F2F3041A9E45970030177D /* LoginViewController.swift */,
 				A24B14BC1AC1B8CC00CF64A9 /* SetupViewController.swift */,
+				A26F23FB1AC5AF090048082A /* AccountViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				A2D6EA6C1ABC7BC500107332 /* ScanView.swift in Sources */,
 				A2756EEF1A9F40F900D892F7 /* BluetoothManager.swift in Sources */,
 				A24B14BD1AC1B8CC00CF64A9 /* SetupViewController.swift in Sources */,
+				A26F23FC1AC5AF090048082A /* AccountViewController.swift in Sources */,
 				A24B14C11AC1DBCA00CF64A9 /* NSData.swift in Sources */,
 				A27392EC1AC4643200F76BF0 /* String.swift in Sources */,
 				A2F2F3031A9E45970030177D /* AppDelegate.swift in Sources */,

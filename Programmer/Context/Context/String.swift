@@ -13,7 +13,7 @@ extension String {
     func formatMessageForRFDuino() -> [String] {
         let uppercase = self.uppercaseString
         var messages:[String] = []
-        let numberOfMessagesToSend = Int(ceil(Double(uppercase.utf16Count/19)))
+        let numberOfMessagesToSend = Int(ceil(Double(count(uppercase)/19)))
         
         // Send the first packet
         var currentSubMessage = "1"
@@ -42,8 +42,8 @@ extension String {
     
     subscript(integerRange: Range<Int>) -> String {
         var rangeEnd:Int? = nil
-        if (integerRange.endIndex > self.utf16Count) {
-            rangeEnd = self.utf16Count
+        if (integerRange.endIndex > count(self)) {
+            rangeEnd = count(self)
         }
         
         let start = advance(startIndex, integerRange.startIndex)

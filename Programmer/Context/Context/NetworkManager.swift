@@ -21,9 +21,10 @@ class NetworkManager {
         
         // Send the request
         Alamofire.request(.POST, baseURLString + "/users", parameters: parameters, encoding: .JSON)
-            .responseString { (_, _, string, _) in
+        .responseString(completionHandler: {
+           (_, _, string, _) -> Void in
                 completionHandler(userID: string)
-            }
+        })
     }
     
     func linkDevice(deviceID: String, userID: String, completionHandler: (result: String?) -> ()) {
@@ -35,9 +36,10 @@ class NetworkManager {
         
         // Send the request
         Alamofire.request(.POST, baseURLString + "/devices/associate", parameters: parameters, encoding: .JSON)
-            .responseString { (_, _, string, _) in
+        .responseString( completionHandler: {
+            (_, _, string, _) -> Void in
                 completionHandler(result: string)
-        }
+        })
     }
 }
 

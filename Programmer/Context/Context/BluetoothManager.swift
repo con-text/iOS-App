@@ -37,11 +37,19 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
         return Static.instance
     }
    
-    let bluetoothManager:CBCentralManager!
+    var bluetoothManager:CBCentralManager!
+    
+    // Not setup UUIDs
     let notSetupUUID = "4E1F1FB0-95C9-4C54-88CB-6B9F3192CDD1"
     let notSetupReadCharacteristicUUID = "4E1F1FB1-95C9-4C54-88CB-6B9F3192CDD1"
     let notSetupWriteCharacteristicUUID = "4E1F1FB2-95C9-4C54-88CB-6B9F3192CDD1"
     let notSetupDisconnectCharacteristicUUID = "4E1F1FB3-95C9-4C54-88CB-6B9F3192CDD1"
+    
+    // Locked UUIDs
+    let lockedUUID = "79E7C777-15B4-406A-84C2-DEB389EA85E1"
+    let lockedReadCharacteristicUUID = "79E7C778-15B4-406A-84C2-DEB389EA85E1"
+    let lockedWriteCharacteristicUUID = "79E7C779-15B4-406A-84C2-DEB389EA85E1"
+    let lockedDisconnectCharacteristicUUID = "79E7C77A-15B4-406A-84C2-DEB389EA85E1"
 
     var currentDevice:(CBPeripheral, DeviceType)?
     var delegate:BluetoothManagerProtocol! = nil
@@ -50,6 +58,7 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
     
     override init() {
         super.init()
+        
         bluetoothManager = CBCentralManager(delegate: self, queue: nil)
     }
     
@@ -63,8 +72,8 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
         println(RSSI)
         
         // If we see a device called Nimble that hasn't been setup
-        if advertisementData["kCBAdvDataLocalName"] as NSString? == "Nimble" {
-            let manData:NSData? = advertisementData["kCBAdvDataManufacturerData"] as NSData?
+        if advertisementData["kCBAdvDataLocalName"] as! String == "Nimble" {
+            let manData:NSData? = advertisementData["kCBAdvDataManufacturerData"] as! NSData?
             let hexString = manData?.hexadecimalString()
             if (hexString! == "Nimble") {
                 NSLog("Found a device that isn't setup")
@@ -98,7 +107,7 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
     // MARK: CBPeripheral
     func peripheral(peripheral: CBPeripheral!, didDiscoverServices error: NSError!) {
         // Get the read and write characteristic channels
-        for service in peripheral.services as [CBService] {
+        for service in peripheral.services as! [CBService] {
             if service.UUID.UUIDString == notSetupUUID {
                 peripheral.discoverCharacteristics([CBUUID(string: notSetupReadCharacteristicUUID),
                                                     CBUUID(string: notSetupWriteCharacteristicUUID),
@@ -115,7 +124,7 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
         var disconnectChannel:CBCharacteristic?
         
         
-        for characteristic in service.characteristics as [CBCharacteristic] {
+        for characteristic in service.characteristics as! [CBCharacteristic] {
             switch characteristic.UUID.UUIDString
             {
                 case notSetupReadCharacteristicUUID:

@@ -12,16 +12,16 @@ extension NSData {
     
     func hexadecimalString() -> String {
         var string = NSMutableString(capacity: length * 2)
-        var byte: Byte?
+        var byte: UInt8?
 
         for i in 0 ..< length {
             getBytes(&byte, range: NSMakeRange(i, 1))
             if (byte != nil) {
                 var tempString = NSString(data: NSData(bytes: &byte, length: 1), encoding: NSASCIIStringEncoding)
-                string.appendString(tempString!)
+                string.appendString(tempString! as String)
             }
         }
         
-        return string
+        return string as String
     }
 }
