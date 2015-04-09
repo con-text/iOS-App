@@ -16,6 +16,8 @@ class SetupViewController: UIViewController, BluetoothManagerProtocol, CBPeriphe
     var writeChannel:CBCharacteristic?
     var disconnectChannel:CBCharacteristic?
     var currentPeripheral:CBPeripheral?
+    
+    @IBOutlet var scrollView:UIScrollView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,12 +26,19 @@ class SetupViewController: UIViewController, BluetoothManagerProtocol, CBPeriphe
         bluetoothManager.delegate = self
     }
 
+    override func viewWillAppear(animated: Bool) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(5 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) { () -> Void in
+            self.scrollToPage(1, animated: true)
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     func discoveredNewDevice(peripheral: CBPeripheral!, readChannel: CBCharacteristic?, writeChannel: CBCharacteristic?, disconnectChannel: CBCharacteristic?) {
+        // Scroll to the next page
+        self.scrollToPage(1, animated: true)
         // Grab references to the objects
         self.writeChannel = writeChannel
         self.disconnectChannel = disconnectChannel
@@ -63,6 +72,13 @@ class SetupViewController: UIViewController, BluetoothManagerProtocol, CBPeriphe
             println("Sending " + data)
             currentPeripheral?.writeValue(data.dataUsingEncoding(NSUTF8StringEncoding), forCharacteristic: self.writeChannel, type:.WithoutResponse)
         }
+    }
+    
+    func scrollToPage(page: Int, animated: Bool) {
+        var frame: CGRect = self.scrollView.frame
+        frame.origin.x = frame.size.width * CGFloat(page);
+        frame.origin.y = 0;
+        self.scrollView.scrollRectToVisible(frame, animated: animated)
     }
 
     /*

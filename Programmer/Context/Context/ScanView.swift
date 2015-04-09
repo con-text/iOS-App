@@ -9,30 +9,33 @@
 import UIKit
 
 class ScanView: UIView {
-
-    let π = M_PI
-    var currentArc = 0
     
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
     override func drawRect(rect: CGRect) {
+        var context = UIGraphicsGetCurrentContext()
+
+        CGContextSaveGState(context)
         
-        // Draw in gray
-        UIColor.lightGrayColor().setStroke()
+        // Set the line width
+        CGContextSetLineWidth(context, 4)
+        // Set the colour
+        var color : Color = UIColor(netHex: 0xaaa9aa).getRGB()
+        CGContextSetRGBStrokeColor(context, color.red, color.green, color.blue, 1.0)
         
-        // Draw arcs
-        var arcOne = UIBezierPath(arcCenter: CGPointMake(bounds.width/2, bounds.height/2), radius: 2*bounds.height/10, startAngle: CGFloat(5*π/4), endAngle: CGFloat(7*π/4), clockwise: true)
-        arcOne.lineWidth = 4.0
-        arcOne.stroke()
+        // Draw the bluetooth logo
+        var bluetoothImage = UIImage(named: "Bluetooth")
+        let centerPoint = CGPoint(x: CGRectGetMidX(bounds) - bluetoothImage!.size.width/2.0, y: CGRectGetMidY(bounds) - bluetoothImage!.size.height/2.0)
+        bluetoothImage?.drawAtPoint(centerPoint)
         
-        var arcThree = UIBezierPath(arcCenter: CGPointMake(bounds.width/2, bounds.height/2), radius: 3*bounds.height/10, startAngle: CGFloat(5*π/4), endAngle: CGFloat(7*π/4), clockwise: true)
-        arcThree.lineWidth = 4.0
-        arcThree.stroke()
-        
-        UIColor.darkGrayColor().setStroke()
-        
-        var arcTwo = UIBezierPath(arcCenter: CGPointMake(bounds.width/2, bounds.height/2), radius: 4*bounds.height/10, startAngle: CGFloat(5*π/4), endAngle: CGFloat(7*π/4), clockwise: true)
-        arcTwo.lineWidth = 4.0
-        arcTwo.stroke()
+        // Draw the circle
+        CGContextAddArc(context, CGRectGetMidX(bounds), CGRectGetMidY(bounds), 50.0, 0, CGFloat(M_PI*2), 1)
+        CGContextStrokePath(context)
+        CGContextAddArc(context, CGRectGetMidX(bounds), CGRectGetMidY(bounds), 80.0, 0, CGFloat(M_PI*2), 1)
+        CGContextStrokePath(context)
+        color = UIColor(netHex: 0x9e9e9f).getRGB()
+        CGContextSetRGBStrokeColor(context, color.red, color.green, color.blue, 1.0)
+        CGContextAddArc(context, CGRectGetMidX(bounds), CGRectGetMidY(bounds), 65.0, 0, CGFloat(M_PI*2), 1)
+        CGContextStrokePath(context)
     }
 }

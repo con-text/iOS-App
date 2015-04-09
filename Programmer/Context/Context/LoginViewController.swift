@@ -20,8 +20,8 @@ class LoginViewController: UIViewController, FBLoginViewDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        self.loginButton.delegate = self;
-        self.loginButton.readPermissions = ["public_profile", "email", "user_friends"]
+       // self.loginButton.delegate = self;
+       // self.loginButton.readPermissions = ["public_profile", "email", "user_friends"]
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,7 +47,7 @@ class LoginViewController: UIViewController, FBLoginViewDelegate {
         NetworkManager().createUser(user.objectID) { [unowned self] userID in
             println("Server user ID " + userID!)
             self.accountManager.setUserDetails(user.objectID, facebookName: user.name, userID: userID!)
-            self.performSegueWithIdentifier("setupScreen", sender: self)
+      //      self.performSegueWithIdentifier("setupScreen", sender: self)
         }
         
     }
