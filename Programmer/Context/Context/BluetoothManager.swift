@@ -38,6 +38,13 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
     }
    
     var bluetoothManager:CBCentralManager!
+    var shouldScan: Bool {
+        didSet {
+            if shouldScan == true && self.bluetoothManager.state == .PoweredOn {
+                startScan()
+            }
+        }
+    }
     
     // Not setup UUIDs
     let notSetupUUID = "4E1F1FB0-95C9-4C54-88CB-6B9F3192CDD1"
@@ -55,10 +62,10 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
     var delegate:BluetoothManagerProtocol! = nil
     
     var readString:String = ""
-    
+
     override init() {
+        shouldScan = false
         super.init()
-        
         bluetoothManager = CBCentralManager(delegate: self, queue: nil)
     }
     
@@ -89,13 +96,20 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
     func centralManagerDidUpdateState(central: CBCentralManager!) {
         switch central.state {
             case .PoweredOn:
-                var scanDictionary = [CBCentralManagerScanOptionAllowDuplicatesKey: true];
-                bluetoothManager.scanForPeripheralsWithServices([CBUUID(string: notSetupUUID)], options:scanDictionary)
+                if (shouldScan) {
+                    startScan()
+                }
             case .Unsupported, .PoweredOff, .Resetting, .Unauthorized:
                 println("Error with bluetooth")
             default:
                 println("Unhandled bluetooth status")
         }
+    }
+    
+    func startScan() {
+        println("Starting scan")
+        var scanDictionary = [CBCentralManagerScanOptionAllowDuplicatesKey: true];
+        bluetoothManager.scanForPeripheralsWithServices([CBUUID(string: notSetupUUID)], options:scanDictionary)
     }
     
     func centralManager(central: CBCentralManager!, didConnectPeripheral peripheral: CBPeripheral!) {

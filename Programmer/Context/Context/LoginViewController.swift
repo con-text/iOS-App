@@ -36,6 +36,10 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, UIScrollV
         bluetoothManager.delegate = self
         
         loginButton.readPermissions = ["public_profile"]
+        if FBSDKAccessToken.currentAccessToken() != nil {
+            onProfileUpdated(nil)
+        }
+
         FBSDKProfile.enableUpdatesOnAccessTokenChange(true)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onProfileUpdated:", name:FBSDKProfileDidChangeNotification, object: nil)
     }
@@ -63,7 +67,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, UIScrollV
         println("Logged out")
     }
     
-    func onProfileUpdated(notification : NSNotification) {
+    func onProfileUpdated(notification : NSNotification?) {
         println("Got user data")
         let userName = FBSDKProfile.currentProfile().name
         let userID = FBSDKProfile.currentProfile().userID
@@ -74,20 +78,18 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, UIScrollV
             println("Server user ID " + nimbleID!)
             self.accountManager.setUserDetails(userID, facebookName: userName, userID: nimbleID!)
             self.scrollToPage(1, animated:true)
+            self.bluetoothManager.shouldScan = true
         }
     }
     
     // MARK: Scrollview
-    
-    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
-        pageControl.currentPage = scrollView.currentPage()
-    }
     
     func scrollToPage(page: Int, animated: Bool) {
         var frame: CGRect = self.scrollView.frame
         frame.origin.x = frame.size.width * CGFloat(page);
         frame.origin.y = 0;
         self.scrollView.scrollRectToVisible(frame, animated: animated)
+        pageControl.currentPage = page
     }
     
     // MARK: Bluetooth delegates
