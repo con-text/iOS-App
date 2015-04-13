@@ -127,18 +127,34 @@
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.93725490196078431" green="0.92941176470588238" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
+                                                    <constraint firstItem="M7w-Sv-Zoo" firstAttribute="height" secondItem="4cQ-Zr-eAS" secondAttribute="height" id="16M-xM-n9x"/>
                                                     <constraint firstItem="4cQ-Zr-eAS" firstAttribute="height" secondItem="G9P-64-FWD" secondAttribute="height" id="1Y7-RQ-GjE"/>
+                                                    <constraint firstItem="M7w-Sv-Zoo" firstAttribute="top" secondItem="4cQ-Zr-eAS" secondAttribute="top" id="1yE-B4-URv"/>
                                                     <constraint firstItem="M7w-Sv-Zoo" firstAttribute="top" secondItem="G9P-64-FWD" secondAttribute="top" id="5ce-bf-1XC"/>
                                                     <constraint firstItem="M7w-Sv-Zoo" firstAttribute="height" secondItem="bDr-O0-TkH" secondAttribute="height" id="DMj-ff-7f9"/>
                                                     <constraint firstItem="M7w-Sv-Zoo" firstAttribute="height" secondItem="G9P-64-FWD" secondAttribute="height" id="NOg-ZY-sr8"/>
                                                     <constraint firstItem="4cQ-Zr-eAS" firstAttribute="width" secondItem="G9P-64-FWD" secondAttribute="width" id="ToG-3G-OgV"/>
+                                                    <constraint firstItem="G9P-64-FWD" firstAttribute="height" secondItem="4cQ-Zr-eAS" secondAttribute="height" id="XVt-xz-aIy"/>
                                                     <constraint firstItem="M7w-Sv-Zoo" firstAttribute="trailing" secondItem="4cQ-Zr-eAS" secondAttribute="leading" id="a4V-g1-stu"/>
+                                                    <constraint firstItem="G9P-64-FWD" firstAttribute="width" secondItem="4cQ-Zr-eAS" secondAttribute="width" id="dCp-XD-sIW"/>
+                                                    <constraint firstItem="G9P-64-FWD" firstAttribute="top" secondItem="4cQ-Zr-eAS" secondAttribute="top" id="dup-7J-632"/>
                                                     <constraint firstItem="M7w-Sv-Zoo" firstAttribute="top" secondItem="bDr-O0-TkH" secondAttribute="top" id="gfn-g5-rtg"/>
                                                     <constraint firstItem="4cQ-Zr-eAS" firstAttribute="top" secondItem="G9P-64-FWD" secondAttribute="top" id="hw9-t8-RcI"/>
                                                     <constraint firstItem="M7w-Sv-Zoo" firstAttribute="leading" secondItem="bDr-O0-TkH" secondAttribute="leading" id="ijf-bj-LdL"/>
                                                     <constraint firstItem="M7w-Sv-Zoo" firstAttribute="width" secondItem="G9P-64-FWD" secondAttribute="width" id="r8C-7J-unU"/>
                                                     <constraint firstItem="4cQ-Zr-eAS" firstAttribute="trailing" secondItem="G9P-64-FWD" secondAttribute="leading" id="w0E-Bb-91R"/>
+                                                    <constraint firstItem="M7w-Sv-Zoo" firstAttribute="width" secondItem="4cQ-Zr-eAS" secondAttribute="width" id="yx6-CC-DJm"/>
                                                 </constraints>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="5ce-bf-1XC"/>
+                                                        <exclude reference="NOg-ZY-sr8"/>
+                                                        <exclude reference="r8C-7J-unU"/>
+                                                        <exclude reference="1Y7-RQ-GjE"/>
+                                                        <exclude reference="ToG-3G-OgV"/>
+                                                        <exclude reference="hw9-t8-RcI"/>
+                                                    </mask>
+                                                </variation>
                                             </view>
                                         </subviews>
                                         <constraints>
@@ -165,6 +181,7 @@
                                     <constraint firstAttribute="bottom" secondItem="1i5-4t-4mw" secondAttribute="bottom" id="9EY-Ce-Qsj"/>
                                     <constraint firstAttribute="trailing" secondItem="1i5-4t-4mw" secondAttribute="trailing" id="ArD-gy-LL6"/>
                                     <constraint firstItem="1i5-4t-4mw" firstAttribute="leading" secondItem="aEp-cE-t97" secondAttribute="leading" id="IVV-wu-FGT"/>
+                                    <constraint firstAttribute="width" secondItem="M7w-Sv-Zoo" secondAttribute="width" id="dTx-NZ-0vj"/>
                                     <constraint firstItem="1i5-4t-4mw" firstAttribute="top" secondItem="aEp-cE-t97" secondAttribute="top" id="fpF-6J-lna"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -172,6 +189,11 @@
                                         <integer key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="67w-ao-tqp"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nimble" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0OY-NM-1F7">
                                 <rect key="frame" x="102" y="50" width="116" height="48"/>
