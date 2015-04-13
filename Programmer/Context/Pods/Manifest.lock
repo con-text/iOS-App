@@ -1,29 +1,13 @@
 PODS:
-  - Alamofire (1.1.4)
-  - Bolts (1.1.4)
-  - Facebook-iOS-SDK (3.23.2):
-    - Bolts (~> 1.0)
-  - SSKeychain (1.2.2)
+  - Alamofire (1.2.0)
+  - SSKeychain (1.2.3)
 
 DEPENDENCIES:
-  - Alamofire (from `https://github.com/Alamofire/Alamofire.git`, branch `xcode-6.3`)
-  - Facebook-iOS-SDK (~> 3.23.1)
+  - Alamofire (~> 1.2)
   - SSKeychain (~> 1.2)
 
-EXTERNAL SOURCES:
-  Alamofire:
-    :branch: xcode-6.3
-    :git: https://github.com/Alamofire/Alamofire.git
-
-CHECKOUT OPTIONS:
-  Alamofire:
-    :commit: 2ff5749ffc0425f05a1411b5b6fd2c25241b5b14
-    :git: https://github.com/Alamofire/Alamofire.git
-
 SPEC CHECKSUMS:
-  Alamofire: 6a2cbaebe78a6d469bc55ee37f0a24ba22af76ac
-  Bolts: f8e2f94edbf9fec7bb8de5ecaaa3aa6b7de6f64e
-  Facebook-iOS-SDK: cd87f0b2f0c1d9574b44e8fa2baacc275524bac3
-  SSKeychain: 88767e903ee8d274ed380e364d96b7a101235286
+  Alamofire: d765c5c1713aa64106b0228aaa600a1e6851f68d
+  SSKeychain: 3f42991739c6c60a9cf1bbd4dff6c0d3694bcf3d
 
 COCOAPODS: 0.36.3

@@ -4,11 +4,9 @@ platform :ios, '8.0'
 use_frameworks!
 
 target 'nimble' do
-pod 'Facebook-iOS-SDK', '~> 3.23.1'
 pod 'SSKeychain', '~> 1.2'
 # Replace this when Alamofire updates
-pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git', :branch => 'xcode-6.3'
-#pod 'Alamofire', '~> 1.1'
+pod 'Alamofire', '~> 1.2'
 end
 
 target 'nimbleTests' do

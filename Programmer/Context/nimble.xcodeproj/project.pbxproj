@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		25EEF161583764B06A9573E4 /* Pods_nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0DF476AEF2FF277F7AC3CBE /* Pods_nimble.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		62CA5FE8370BC0D40A944528 /* Pods_nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8049F7F5149B80F024298F2 /* Pods_nimble.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		A23896311AA75BCB0015F0DE /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23896301AA75BCB0015F0DE /* AccountManager.swift */; };
 		A24B14BD1AC1B8CC00CF64A9 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24B14BC1AC1B8CC00CF64A9 /* SetupViewController.swift */; };
 		A24B14C11AC1DBCA00CF64A9 /* NSData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24B14C01AC1DBCA00CF64A9 /* NSData.swift */; };
@@ -25,6 +25,9 @@
 		A2F2F30A1A9E45970030177D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2F2F3091A9E45970030177D /* Images.xcassets */; };
 		A2F2F30D1A9E45970030177D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2F2F30B1A9E45970030177D /* LaunchScreen.xib */; };
 		A2F2F3191A9E45970030177D /* ContextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F2F3181A9E45970030177D /* ContextTests.swift */; };
+		A2F369111ADC26A40061E4C4 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2F3690F1ADC26A40061E4C4 /* FBSDKCoreKit.framework */; };
+		A2F369121ADC26A40061E4C4 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2F369101ADC26A40061E4C4 /* FBSDKLoginKit.framework */; };
+		A2F369141ADC28820061E4C4 /* Pods_nimble.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B8049F7F5149B80F024298F2 /* Pods_nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,8 +40,22 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A29C54761ADC22D600BCF952 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A2F369141ADC28820061E4C4 /* Pods_nimble.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		537BC98BEE99D850C72FDF0F /* Pods-nimble.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nimble.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nimble/Pods-nimble.debug.xcconfig"; sourceTree = "<group>"; };
+		702C9AE44DBBC0558946852D /* Pods-nimble.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nimble.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nimble/Pods-nimble.debug.xcconfig"; sourceTree = "<group>"; };
 		A23896301AA75BCB0015F0DE /* AccountManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
 		A23F270D1AA60EBA008A859F /* Context-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Context-Bridging-Header.h"; sourceTree = "<group>"; };
 		A24B14BC1AC1B8CC00CF64A9 /* SetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
@@ -61,8 +78,10 @@
 		A2F2F3121A9E45970030177D /* nimbleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nimbleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2F2F3171A9E45970030177D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2F2F3181A9E45970030177D /* ContextTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextTests.swift; sourceTree = "<group>"; };
-		B0DF476AEF2FF277F7AC3CBE /* Pods_nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B69866393830279F57C4DBB5 /* Pods-nimble.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nimble.release.xcconfig"; path = "Pods/Target Support Files/Pods-nimble/Pods-nimble.release.xcconfig"; sourceTree = "<group>"; };
+		A2F3690F1ADC26A40061E4C4 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../../../FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		A2F369101ADC26A40061E4C4 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../../../FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		B8049F7F5149B80F024298F2 /* Pods_nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E941A5F606B6756B45C54999 /* Pods-nimble.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nimble.release.xcconfig"; path = "Pods/Target Support Files/Pods-nimble/Pods-nimble.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +90,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2F19C5E1AD6CF18002A63AA /* QuartzCore.framework in Frameworks */,
-				25EEF161583764B06A9573E4 /* Pods_nimble.framework in Frameworks */,
+				A2F369111ADC26A40061E4C4 /* FBSDKCoreKit.framework in Frameworks */,
+				A2F369121ADC26A40061E4C4 /* FBSDKLoginKit.framework in Frameworks */,
+				62CA5FE8370BC0D40A944528 /* Pods_nimble.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,8 +109,10 @@
 		15A7ACB2C9A76849DF02E3A3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A2F3690F1ADC26A40061E4C4 /* FBSDKCoreKit.framework */,
+				A2F369101ADC26A40061E4C4 /* FBSDKLoginKit.framework */,
 				A2F19C5D1AD6CF18002A63AA /* QuartzCore.framework */,
-				B0DF476AEF2FF277F7AC3CBE /* Pods_nimble.framework */,
+				B8049F7F5149B80F024298F2 /* Pods_nimble.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -148,8 +171,8 @@
 				A2F2F2FF1A9E45970030177D /* Context */,
 				A2F2F3151A9E45970030177D /* ContextTests */,
 				A2F2F2FE1A9E45970030177D /* Products */,
-				F79CF818967A0D804E70F614 /* Pods */,
 				15A7ACB2C9A76849DF02E3A3 /* Frameworks */,
+				FB827132AF965565CC3169C3 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -203,11 +226,11 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		F79CF818967A0D804E70F614 /* Pods */ = {
+		FB827132AF965565CC3169C3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				537BC98BEE99D850C72FDF0F /* Pods-nimble.debug.xcconfig */,
-				B69866393830279F57C4DBB5 /* Pods-nimble.release.xcconfig */,
+				702C9AE44DBBC0558946852D /* Pods-nimble.debug.xcconfig */,
+				E941A5F606B6756B45C54999 /* Pods-nimble.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -219,14 +242,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A2F2F31C1A9E45970030177D /* Build configuration list for PBXNativeTarget "nimble" */;
 			buildPhases = (
-				F740F670BDC572AF49AA1E9E /* Check Pods Manifest.lock */,
+				C6D833BF99373DFC498A5311 /* Check Pods Manifest.lock */,
 				A2F2F2F91A9E45970030177D /* Sources */,
 				A23F27111AA61949008A859F /* Increment Version */,
 				A23F27121AA61957008A859F /* Increment Build */,
 				A2F2F2FA1A9E45970030177D /* Frameworks */,
 				A2F2F2FB1A9E45970030177D /* Resources */,
-				3EB61F699C19C7032D1EFE12 /* Copy Pods Resources */,
-				8CA80D199AA914AA0D207F8D /* Embed Pods Frameworks */,
+				5080CFE917B704D75811BA64 /* Embed Pods Frameworks */,
+				28ACDABA46E986C77080111A /* Copy Pods Resources */,
+				A29C54761ADC22D600BCF952 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -314,7 +338,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3EB61F699C19C7032D1EFE12 /* Copy Pods Resources */ = {
+		28ACDABA46E986C77080111A /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -329,7 +353,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-nimble/Pods-nimble-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8CA80D199AA914AA0D207F8D /* Embed Pods Frameworks */ = {
+		5080CFE917B704D75811BA64 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -372,7 +396,7 @@
 			shellPath = /bin/sh;
 			shellScript = "# xcode-build-bump.sh\n# @desc Auto-increment the build number every time the project is run.\n# @usage\n# 1. Select: your Target in Xcode\n# 2. Select: Build Phases Tab\n# 3. Select: Add Build Phase -> Add Run Script\n# 4. Paste code below in to new \"Run Script\" section\n# 5. Drag the \"Run Script\" below \"Link Binaries With Libraries\"\n# 6. Insure that your starting build number is set to a whole integer and not a float (e.g. 1, not 1.0)\n\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
 		};
-		F740F670BDC572AF49AA1E9E /* Check Pods Manifest.lock */ = {
+		C6D833BF99373DFC498A5311 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -526,12 +550,16 @@
 		};
 		A2F2F31D1A9E45970030177D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 537BC98BEE99D850C72FDF0F /* Pods-nimble.debug.xcconfig */;
+			baseConfigurationReference = 702C9AE44DBBC0558946852D /* Pods-nimble.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/denisogun/Documents/FacebookSDK,
+				);
 				INFOPLIST_FILE = Context/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = nimble;
@@ -543,12 +571,16 @@
 		};
 		A2F2F31E1A9E45970030177D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B69866393830279F57C4DBB5 /* Pods-nimble.release.xcconfig */;
+			baseConfigurationReference = E941A5F606B6756B45C54999 /* Pods-nimble.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/denisogun/Documents/FacebookSDK,
+				);
 				INFOPLIST_FILE = Context/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = nimble;

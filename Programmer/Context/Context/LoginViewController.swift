@@ -7,14 +7,23 @@
 //
 
 import UIKit
+import CoreBluetooth
+import FBSDKCoreKit
+import FBSDKLoginKit
 
-import FacebookSDK
-
-class LoginViewController: UIViewController, FBLoginViewDelegate, UIScrollViewDelegate {
+class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, UIScrollViewDelegate, BluetoothManagerProtocol, CBPeripheralDelegate  {
     
-    @IBOutlet var loginButton : FBLoginView!
+    @IBOutlet var loginButton : FBSDKLoginButton!
+    @IBOutlet var scanView : ScanView!
+    @IBOutlet var scanningText: UILabel!
     @IBOutlet var scrollView : UIScrollView!
     @IBOutlet var pageControl : UIPageControl!
+    
+    let bluetoothManager = BluetoothManager.sharedInstance
+    
+    var writeChannel:CBCharacteristic?
+    var disconnectChannel:CBCharacteristic?
+    var currentPeripheral:CBPeripheral?
     
     let accountManager = AccountManager()
 
@@ -24,6 +33,11 @@ class LoginViewController: UIViewController, FBLoginViewDelegate, UIScrollViewDe
         
        // self.loginButton.delegate = self;
        // self.loginButton.readPermissions = ["public_profile", "email", "user_friends"]
+        bluetoothManager.delegate = self
+        
+        loginButton.readPermissions = ["public_profile"]
+        FBSDKProfile.enableUpdatesOnAccessTokenChange(true)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onProfileUpdated:", name:FBSDKProfileDidChangeNotification, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,33 +51,86 @@ class LoginViewController: UIViewController, FBLoginViewDelegate, UIScrollViewDe
     
     //MARK: Facebook delegates
     
-    func loginView(loginView: FBLoginView!, handleError: NSError!) {
-        println("Error: \(handleError.localizedDescription)")
-    }
-    
-    func loginViewFetchedUserInfo(loginView: FBLoginView!, user: FBGraphUser!) {
-        println("Got user data")
-        println("User name: \(user.name)")
-        println("User ID: \(user.objectID)")
-        // Send the request to the server
-        NetworkManager().createUser(user.objectID) { [unowned self] userID in
-            println("Server user ID " + userID!)
-            self.accountManager.setUserDetails(user.objectID, facebookName: user.name, userID: userID!)
-      //      self.performSegueWithIdentifier("setupScreen", sender: self)
+    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
+        if (error != nil) {
+            println(error.localizedDescription)
+        } else if result.isCancelled {
+            println("cancelled")
         }
+    }
+    
+    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
+        println("Logged out")
+    }
+    
+    func onProfileUpdated(notification : NSNotification) {
+        println("Got user data")
+        let userName = FBSDKProfile.currentProfile().name
+        let userID = FBSDKProfile.currentProfile().userID
+        println("User's name: \(FBSDKProfile.currentProfile().name)")
+        println("User ID: \(FBSDKProfile.currentProfile().userID)")
         
+        NetworkManager().createUser(userID) { [unowned self] nimbleID in
+            println("Server user ID " + nimbleID!)
+            self.accountManager.setUserDetails(userID, facebookName: userName, userID: nimbleID!)
+            self.scrollToPage(1, animated:true)
+        }
     }
     
-    func loginViewShowingLoggedInUser(loginView: FBLoginView!) {
-        println("User logged in")
-    }
-    
-    func loginViewShowingLoggedOutUser(loginView: FBLoginView!) {
-        println("User logged out")
-    }
+    // MARK: Scrollview
     
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         pageControl.currentPage = scrollView.currentPage()
+    }
+    
+    func scrollToPage(page: Int, animated: Bool) {
+        var frame: CGRect = self.scrollView.frame
+        frame.origin.x = frame.size.width * CGFloat(page);
+        frame.origin.y = 0;
+        self.scrollView.scrollRectToVisible(frame, animated: animated)
+    }
+    
+    // MARK: Bluetooth delegates
+    func discoveredNewDevice(peripheral: CBPeripheral!, readChannel: CBCharacteristic?, writeChannel: CBCharacteristic?, disconnectChannel: CBCharacteristic?) {
+        // Change the text
+        self.scanningText.text = "Setting up device..."
+        self.scanView.scanning = false
+        self.scanView.setNeedsDisplay()
+        // Grab references to the objects
+        self.writeChannel = writeChannel
+        self.disconnectChannel = disconnectChannel
+        self.currentPeripheral = peripheral
+        
+        println("Connected to a new device")
+        let dataToSend:[String] = "Setup".formatMessageForRFDuino()
+        
+        sendData(dataToSend)
+    }
+    
+    func receivedMessageFromDevice(peripheral: CBPeripheral, message: String) {
+        println("Received message " + message)
+        if (message == "OK") {
+            let userID = AccountManager().getUserID()
+            let dataToSend = userID!.formatMessageForRFDuino()
+            println(userID)
+            sendData(dataToSend)
+        } else {
+            // This will be the serial number from the device
+            NetworkManager().linkDevice(message, userID: AccountManager().getUserID()!, completionHandler: { (result) -> () in
+                println(result)
+                if (result == "Success") {
+                    self.sendData("OK".formatMessageForRFDuino())
+                    self.scrollToPage(2, animated: true)
+                }
+            })
+        }
+    }
+    
+    func sendData(dataToSend:[String]) {
+        for data in dataToSend {
+            println("Sending " + data)
+            currentPeripheral?.writeValue(data.dataUsingEncoding(NSUTF8StringEncoding), forCharacteristic: self.writeChannel, type:.WithoutResponse)
+        }
     }
 }
 

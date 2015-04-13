@@ -37,8 +37,8 @@ class SetupViewController: UIViewController, BluetoothManagerProtocol, CBPeriphe
     }
     
     func discoveredNewDevice(peripheral: CBPeripheral!, readChannel: CBCharacteristic?, writeChannel: CBCharacteristic?, disconnectChannel: CBCharacteristic?) {
-        // Scroll to the next page
-        self.scrollToPage(1, animated: true)
+        // Change the text
+        
         // Grab references to the objects
         self.writeChannel = writeChannel
         self.disconnectChannel = disconnectChannel

@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Denis Ogun. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct Color {
     let red: CGFloat
