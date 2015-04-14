@@ -45,6 +45,13 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
             }
         }
     }
+    var scanType : DeviceType? {
+        didSet {
+            self.bluetoothManager.stopScan()
+            let currentShouldScan = self.shouldScan
+            self.shouldScan = currentShouldScan
+        }
+    }
     
     // Not setup UUIDs
     let notSetupUUID = "4E1F1FB0-95C9-4C54-88CB-6B9F3192CDD1"
@@ -70,25 +77,30 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
     }
     
     func centralManager(central: CBCentralManager!, didDiscoverPeripheral peripheral: CBPeripheral!, advertisementData: [NSObject : AnyObject]!, RSSI: NSNumber!) {
-        /* Make sure it's a Nimble device. This should really be done by looking for a nimble service UUID
-           but Benji doesn't want to change his code/is a bellend */
-        if (RSSI.integerValue < -35) || (RSSI.integerValue > 0) {
-            return
+        
+        if (scanType == .NotSetup) {
+            if (RSSI.integerValue < -35) || (RSSI.integerValue > 0) {
+                return
+            }
         }
         
         println(RSSI)
         
-        // If we see a device called Nimble that hasn't been setup
+        // If we see a device called Nimble, then it's a device that hasn't been setup
         if advertisementData["kCBAdvDataLocalName"] as! String == "Nimble" {
             let manData:NSData? = advertisementData["kCBAdvDataManufacturerData"] as! NSData?
             let hexString = manData?.hexadecimalString()
-            if (hexString! == "Nimble") {
-                NSLog("Found a device that isn't setup")
+            if (hexString! == "Nimble") && scanType == .NotSetup {
+                println("Found a device that isn't setup")
                 currentDevice = (peripheral, .NotSetup)
                 bluetoothManager.stopScan()
                 bluetoothManager.connectPeripheral(peripheral, options: nil)
-            } else {
-                NSLog("Found a device")
+            }
+            
+            if (hexString == AccountManager().getUserID()) && scanType == .Setup {
+                currentDevice = (peripheral, .Setup)
+                bluetoothManager.stopScan()
+                bluetoothManager.connectPeripheral(peripheral, options: nil)
             }
         }
     }
@@ -107,15 +119,24 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
     }
     
     func startScan() {
-        println("Starting scan")
         var scanDictionary = [CBCentralManagerScanOptionAllowDuplicatesKey: true];
-        bluetoothManager.scanForPeripheralsWithServices([CBUUID(string: notSetupUUID)], options:scanDictionary)
+        if scanType == .NotSetup {
+            println("Starting scan for new devices")
+            bluetoothManager.scanForPeripheralsWithServices([CBUUID(string: notSetupUUID)], options:scanDictionary)
+        } else if scanType == .Setup {
+            println("Starting scan for locked devices")
+            bluetoothManager.scanForPeripheralsWithServices([CBUUID(string: lockedUUID)], options:scanDictionary)
+        }
     }
     
     func centralManager(central: CBCentralManager!, didConnectPeripheral peripheral: CBPeripheral!) {
         println("Connected to peripheral")
         peripheral.delegate = self
-        peripheral.discoverServices([CBUUID(string: notSetupUUID)])
+        if scanType == .NotSetup {
+            peripheral.discoverServices([CBUUID(string: notSetupUUID)])
+        } else if scanType == .Setup {
+            peripheral.discoverServices([CBUUID(string: lockedUUID)])
+        }
     }
     
     // MARK: CBPeripheral
@@ -126,6 +147,10 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
                 peripheral.discoverCharacteristics([CBUUID(string: notSetupReadCharacteristicUUID),
                                                     CBUUID(string: notSetupWriteCharacteristicUUID),
                                                     CBUUID(string: notSetupDisconnectCharacteristicUUID)], forService: service)
+            } else if service.UUID.UUIDString == lockedUUID {
+                peripheral.discoverCharacteristics([CBUUID(string: lockedReadCharacteristicUUID),
+                                                    CBUUID(string: lockedWriteCharacteristicUUID),
+                                                    CBUUID(string: lockedDisconnectCharacteristicUUID)], forService: service)
             }
         }
     }
@@ -154,8 +179,22 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
                     disconnectChannel = characteristic
                     break
                 
+                case lockedReadCharacteristicUUID:
+                    peripheral.setNotifyValue(true, forCharacteristic: characteristic)
+                    readChannel = characteristic
+                    break
+                
+                case lockedWriteCharacteristicUUID:
+                    writeChannel = characteristic
+                    break
+                
+                case lockedDisconnectCharacteristicUUID:
+                    disconnectChannel = characteristic
+                    break
+                
                 default:
                     // Don't do anything
+                    println("Unknown characteristic")
                     break
             }
         }

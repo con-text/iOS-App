@@ -26,22 +26,27 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, UIScrollV
     var currentPeripheral:CBPeripheral?
     
     let accountManager = AccountManager()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        if accountManager.isSetup() == true {
+            println("Performing segue")
+            self.performSegueWithIdentifier("showAccount", sender: self)
+            return
+        }
         
-       // self.loginButton.delegate = self;
-       // self.loginButton.readPermissions = ["public_profile", "email", "user_friends"]
+        // Do any additional setup after loading the view, typically from a nib
+        bluetoothManager.scanType = .NotSetup
         bluetoothManager.delegate = self
         
         loginButton.readPermissions = ["public_profile"]
         if FBSDKAccessToken.currentAccessToken() != nil {
             onProfileUpdated(nil)
         }
-
+        
         FBSDKProfile.enableUpdatesOnAccessTokenChange(true)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onProfileUpdated:", name:FBSDKProfileDidChangeNotification, object: nil)
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,13 +73,16 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, UIScrollV
     }
     
     func onProfileUpdated(notification : NSNotification?) {
-        println("Got user data")
         let userName = FBSDKProfile.currentProfile().name
         let userID = FBSDKProfile.currentProfile().userID
-        println("User's name: \(FBSDKProfile.currentProfile().name)")
-        println("User ID: \(FBSDKProfile.currentProfile().userID)")
+        let accessToken = FBSDKAccessToken.currentAccessToken().tokenString
         
-        NetworkManager().createUser(userID) { [unowned self] nimbleID in
+        println("Got user data")
+        println("User's name: \(userName)")
+        println("User ID: \(userID)")
+        println("Token: \(accessToken)")
+        
+        NetworkManager().createUser(userID, accessToken: accessToken) { [unowned self] nimbleID in
             println("Server user ID " + nimbleID!)
             self.accountManager.setUserDetails(userID, facebookName: userName, userID: nimbleID!)
             self.scrollToPage(1, animated:true)
@@ -106,32 +114,31 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, UIScrollV
         println("Connected to a new device")
         let dataToSend:[String] = "Setup".formatMessageForRFDuino()
         
-        sendData(dataToSend)
+        self.currentPeripheral!.sendData(dataToSend, writeChannel: self.writeChannel!)
     }
     
     func receivedMessageFromDevice(peripheral: CBPeripheral, message: String) {
         println("Received message " + message)
         if (message == "OK") {
-            let userID = AccountManager().getUserID()
+            let userID = accountManager.getUserID()
             let dataToSend = userID!.formatMessageForRFDuino()
             println(userID)
-            sendData(dataToSend)
+            self.currentPeripheral!.sendData(dataToSend, writeChannel: self.writeChannel!)
         } else {
             // This will be the serial number from the device
-            NetworkManager().linkDevice(message, userID: AccountManager().getUserID()!, completionHandler: { (result) -> () in
+            NetworkManager().linkDevice(message, userID: accountManager.getUserID()!, completionHandler: { (result) -> () in
                 println(result)
                 if (result == "Success") {
-                    self.sendData("OK".formatMessageForRFDuino())
+                    self.currentPeripheral!.sendData("OK".formatMessageForRFDuino(), writeChannel: self.writeChannel!)
                     self.scrollToPage(2, animated: true)
+                    self.accountManager.becomeSetup()
+                    
+                    let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1.5 * Double(NSEC_PER_SEC)))
+                    dispatch_after(delayTime, dispatch_get_main_queue()) {
+                        self.performSegueWithIdentifier("showAccount", sender: self)
+                    }
                 }
             })
-        }
-    }
-    
-    func sendData(dataToSend:[String]) {
-        for data in dataToSend {
-            println("Sending " + data)
-            currentPeripheral?.writeValue(data.dataUsingEncoding(NSUTF8StringEncoding), forCharacteristic: self.writeChannel, type:.WithoutResponse)
         }
     }
 }

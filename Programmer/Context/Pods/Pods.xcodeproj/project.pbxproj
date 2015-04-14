@@ -67,6 +67,7 @@
 		8D657D4B32A9F6CF96981BCA /* SSKeychain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SSKeychain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92093C38957676ED81258D79 /* Pods-nimble.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-nimble.debug.xcconfig"; sourceTree = "<group>"; };
 		93C9B25F7D0070C6833FD955 /* SSKeychainQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SSKeychainQuery.h; path = SSKeychain/SSKeychainQuery.h; sourceTree = "<group>"; };
+		A2F369191ADDBA9C0061E4C4 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = MyPlayground.playground; path = ../Context/MyPlayground.playground; sourceTree = "<group>"; };
 		A335512D607C73AC140E13FB /* Pods-nimble-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-nimble-resources.sh"; sourceTree = "<group>"; };
 		A48507E17F075E865F463C89 /* Pods-nimble-Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-nimble-Alamofire.xcconfig"; sourceTree = "<group>"; };
 		A5F0B77B6644051F716A9B1D /* Pods-nimble-SSKeychain-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-nimble-SSKeychain-dummy.m"; sourceTree = "<group>"; };
@@ -169,6 +170,7 @@
 		91FB170947C9885C03CA901D = {
 			isa = PBXGroup;
 			children = (
+				A2F369191ADDBA9C0061E4C4 /* MyPlayground.playground */,
 				361195F91719157A4FE02B8D /* Podfile */,
 				CD1E9C172813EA25991ADF49 /* Frameworks */,
 				75282027F229102EFF4716B1 /* Pods */,

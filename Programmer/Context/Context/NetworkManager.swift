@@ -13,10 +13,11 @@ class NetworkManager {
     
     let baseURLString = "http://contexte.herokuapp.com"
     
-    func createUser(facebookID: String, completionHandler: (userID: String?) -> ()) {
+    func createUser(facebookID: String, accessToken: String, completionHandler: (userID: String?) -> ()) {
         // Create the request body
         let parameters = [
-            "fbId" : facebookID
+            "fbId" : facebookID,
+            "accessToken" : accessToken
         ]
         
         // Send the request
@@ -39,6 +40,19 @@ class NetworkManager {
         .responseString( completionHandler: {
             (_, _, string, _) -> Void in
                 completionHandler(result: string)
+        })
+    }
+    
+    func encryptStageOne(uuid: String, plainText: String, completionHandler: (result: String?) -> ()) {
+        // Send the request
+        let URL = baseURLString + "/auth/stage1/" + uuid + "/" + plainText
+
+        Alamofire.request(.GET, URL, encoding: .JSON)
+        .responseJSON( completionHandler: {
+            (_, _, JSON, _) -> Void in
+            if let jsonResult = JSON as? Dictionary<String, String> {
+                completionHandler(result: jsonResult["message"])
+            }
         })
     }
 }

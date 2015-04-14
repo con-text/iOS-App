@@ -14,6 +14,7 @@ class AccountManager: NSObject {
     let accountID = "facebookID"
     let accountName = "facebookName"
     let accountUserID = "userID"
+    let accountSetup = "isSetup"
     
     override init() {
         super.init()
@@ -49,5 +50,19 @@ class AccountManager: NSObject {
         } else {
             return userID
         }
+    }
+    
+    func isSetup() -> Bool {
+        let setup : String? = SSKeychain.passwordForService(service, account: accountSetup, error: nil)
+        
+        if setup == "1" {
+            return true
+        }
+        
+        return false
+    }
+    
+    func becomeSetup() {
+        SSKeychain.setPassword("1", forService: service, account: accountSetup)
     }
 }

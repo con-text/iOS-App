@@ -1,12 +1,8 @@
-//
-//  String.swift
-//  nimble
-//
-//  Created by Denis Ogun on 26/03/2015.
-//  Copyright (c) 2015 Denis Ogun. All rights reserved.
-//
+//: Playground - noun: a place where people can play
 
-import Foundation
+import Cocoa
+
+var str = "DE54495425C75FA5682B5F12D79A818518C2CAE58AD2F4F52E4BD3DAC4A48E03"
 
 extension String {
     
@@ -53,3 +49,5 @@ extension String {
         return self[range]
     }
 }
+
+str.formatMessageForRFDuino()
