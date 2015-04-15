@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreBluetooth
+import FBSDKCoreKit
 
 class AccountViewController: UIViewController, BluetoothManagerProtocol {
     
@@ -17,6 +18,9 @@ class AccountViewController: UIViewController, BluetoothManagerProtocol {
     var writeChannel:CBCharacteristic?
     var disconnectChannel:CBCharacteristic?
     var currentPeripheral:CBPeripheral?
+    
+    @IBOutlet var profilePic : FacebookProfile!
+    @IBOutlet var nameLabel : UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +28,8 @@ class AccountViewController: UIViewController, BluetoothManagerProtocol {
         bluetoothManager.delegate = self
         bluetoothManager.scanType = .Setup
         bluetoothManager.shouldScan = true
+        
+        setName()
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
@@ -71,5 +77,38 @@ class AccountViewController: UIViewController, BluetoothManagerProtocol {
     
     func restartScan() {
         bluetoothManager.startScan()
+    }
+    
+    func setName() {
+        
+        let currentTime = getCurrentTime()
+        var name = "Person"
+        
+        if let profileID = FBSDKProfile.currentProfile() {
+            name = profileID.firstName
+        }
+        
+        nameLabel.text = currentTime! + name
+    }
+    
+    func getCurrentTime() -> String? {
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components(.CalendarUnitHour, fromDate:  NSDate())
+        let currentHour = components.hour // You can play around with the ""components""
+        
+        switch (currentHour) {
+            case 0..<12:
+                return "Good Morning "
+            
+            case 12..<18:
+                return "Good Afternoon "
+            
+            case 18..<24:
+                return "Good Evening "
+            
+            default:
+                println("Error: Unknown time")
+                return ""
+        }
     }
 }

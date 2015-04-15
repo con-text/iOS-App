@@ -17,6 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        if (NSUserDefaults.standardUserDefaults().objectForKey("FirstRun") == nil) {
+            println("Clearing defaults")
+            AccountManager().reset()
+            NSUserDefaults.standardUserDefaults().setValue("1", forKey: "FirstRun")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
 

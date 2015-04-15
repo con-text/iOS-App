@@ -29,6 +29,7 @@
 		A2F369161ADD8E2E0061E4C4 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F369151ADD8E2E0061E4C4 /* AccountViewController.swift */; };
 		A2F369181ADD93790061E4C4 /* CBPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F369171ADD93790061E4C4 /* CBPeripheral.swift */; };
 		A2F3691D1ADE82570061E4C4 /* NSObject+Swift.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F3691B1ADE82570061E4C4 /* NSObject+Swift.m */; };
+		A2F3691F1ADE97110061E4C4 /* FacebookProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F3691E1ADE97110061E4C4 /* FacebookProfile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		A2F3691A1ADE82570061E4C4 /* NSObject+Swift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Swift.h"; sourceTree = "<group>"; };
 		A2F3691B1ADE82570061E4C4 /* NSObject+Swift.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Swift.m"; sourceTree = "<group>"; };
 		A2F3691C1ADE82570061E4C4 /* performSelector-swift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "performSelector-swift.h"; sourceTree = "<group>"; };
+		A2F3691E1ADE97110061E4C4 /* FacebookProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookProfile.swift; sourceTree = "<group>"; };
 		B8049F7F5149B80F024298F2 /* Pods_nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E941A5F606B6756B45C54999 /* Pods-nimble.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nimble.release.xcconfig"; path = "Pods/Target Support Files/Pods-nimble/Pods-nimble.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				A2D6EA6B1ABC7BC500107332 /* ScanView.swift */,
+				A2F3691E1ADE97110061E4C4 /* FacebookProfile.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 				A2F2F3031A9E45970030177D /* AppDelegate.swift in Sources */,
 				A2F369161ADD8E2E0061E4C4 /* AccountViewController.swift in Sources */,
 				A2F3691D1ADE82570061E4C4 /* NSObject+Swift.m in Sources */,
+				A2F3691F1ADE97110061E4C4 /* FacebookProfile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

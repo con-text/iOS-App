@@ -84,8 +84,18 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
             }
         }
         
-        println(RSSI)
         println(advertisementData)
+        
+        if (scanType == .Setup) {
+            let serviceUUIDs = advertisementData["kCBAdvDataServiceUUIDs"] as! NSArray
+            if serviceUUIDs.count > 1 {
+                println("Too many service UUIDs, ignoring")
+                self.invalidateDatabase(peripheral)
+                return
+            }
+        }
+        
+        println(RSSI)
         
         // If we see a device called Nimble, then it's a device that hasn't been setup
         if advertisementData["kCBAdvDataLocalName"] as! String == "Nimble" {
@@ -226,6 +236,7 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
     func invalidateDatabase(peripheral: CBPeripheral!) {
         let selector = Selector("invalidateAllAttributes")
         if peripheral!.respondsToSelector(selector) {
+            println("Invalidating")
             peripheral!.swift_performSelector(selector)
         }
     }

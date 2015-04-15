@@ -276,9 +276,10 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Upr-ud-qSZ">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <color key="barTintColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Upr-ud-qSZ">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="barTintColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" red="0.9001144255050505" green="0.9001144255050505" blue="0.9001144255050505" alpha="1" colorSpace="calibratedRGB"/>
                                 </textAttributes>
@@ -286,16 +287,55 @@
                                     <navigationItem title="My Nimble" id="6mF-mM-qUJ"/>
                                 </items>
                             </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Profile-BG" translatesAutoresizingMaskIntoConstraints="NO" id="Qsf-0X-NIX">
-                                <rect key="frame" x="0.0" y="44" width="320" height="150"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile-BG" translatesAutoresizingMaskIntoConstraints="NO" id="Qsf-0X-NIX">
+                                <rect key="frame" x="0.0" y="64" width="320" height="150"/>
                             </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EZS-fc-cdH" userLabel="Status bar">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pCx-Qy-zqS" userLabel="Profile pic" customClass="FacebookProfile" customModule="nimble" customModuleProvider="target">
+                                <rect key="frame" x="110" y="74" width="100" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Good Afternoon Denis" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ol-Kq-KWw">
+                                <rect key="frame" x="93" y="185" width="135" height="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Qsf-0X-NIX" firstAttribute="top" secondItem="pCx-Qy-zqS" secondAttribute="bottom" constant="-110" id="30G-T4-qO1"/>
+                            <constraint firstItem="Upr-ud-qSZ" firstAttribute="width" secondItem="db3-DR-pph" secondAttribute="width" id="337-59-jNx"/>
+                            <constraint firstItem="7Ol-Kq-KWw" firstAttribute="top" secondItem="pCx-Qy-zqS" secondAttribute="bottom" constant="11" id="4af-6B-cLz"/>
+                            <constraint firstItem="Qsf-0X-NIX" firstAttribute="leading" secondItem="pCx-Qy-zqS" secondAttribute="trailing" constant="-210" id="GUU-Fz-pF8"/>
+                            <constraint firstAttribute="centerX" secondItem="Upr-ud-qSZ" secondAttribute="centerX" id="JDK-Pl-ZFQ"/>
+                            <constraint firstItem="7Ol-Kq-KWw" firstAttribute="centerX" secondItem="pCx-Qy-zqS" secondAttribute="centerX" constant="0.5" id="MU0-eE-rKR"/>
+                            <constraint firstItem="Upr-ud-qSZ" firstAttribute="top" secondItem="jlK-u5-Bj1" secondAttribute="bottom" id="OM9-h5-6f2"/>
+                            <constraint firstAttribute="centerX" secondItem="Qsf-0X-NIX" secondAttribute="centerX" id="WFL-2W-Y2A"/>
+                            <constraint firstItem="Qsf-0X-NIX" firstAttribute="top" secondItem="Upr-ud-qSZ" secondAttribute="bottom" id="WwZ-pK-r61"/>
+                            <constraint firstItem="Qsf-0X-NIX" firstAttribute="top" secondItem="pCx-Qy-zqS" secondAttribute="bottom" constant="-125" id="XRx-UR-xS9"/>
+                            <constraint firstItem="pCx-Qy-zqS" firstAttribute="top" secondItem="Upr-ud-qSZ" secondAttribute="bottom" constant="10" id="dQO-xq-1z5"/>
+                            <constraint firstItem="Qsf-0X-NIX" firstAttribute="centerX" secondItem="pCx-Qy-zqS" secondAttribute="centerX" id="fN4-U5-2sg"/>
+                            <constraint firstItem="Qsf-0X-NIX" firstAttribute="centerY" secondItem="pCx-Qy-zqS" secondAttribute="centerY" id="iDO-E0-cXn"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="XRx-UR-xS9"/>
+                                <exclude reference="iDO-E0-cXn"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="nameLabel" destination="7Ol-Kq-KWw" id="g9l-0A-RNY"/>
+                        <outlet property="profilePic" destination="pCx-Qy-zqS" id="ux7-GC-6ue"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PEA-wa-VkQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="897" y="250"/>
+            <point key="canvasLocation" x="909" y="340"/>
         </scene>
     </scenes>
     <resources>

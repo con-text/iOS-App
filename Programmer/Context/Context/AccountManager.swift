@@ -65,4 +65,12 @@ class AccountManager: NSObject {
     func becomeSetup() {
         SSKeychain.setPassword("1", forService: service, account: accountSetup)
     }
+    
+    func reset() {
+        SSKeychain.deletePasswordForService(service, account: accountSetup)
+        SSKeychain.deletePasswordForService(service, account: accountName)
+        SSKeychain.deletePasswordForService(service, account: accountID)
+        SSKeychain.deletePasswordForService(service, account: accountUserID)
+    }
+    
 }
