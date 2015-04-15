@@ -25,7 +25,6 @@ extension String {
         for i in 1..<numberOfMessagesToSend {
             currentSubMessage = "2"
             currentSubMessage += uppercase[i*19..<(i*19)+19]
-            println(currentSubMessage)
             messages.append(currentSubMessage)
         }
         

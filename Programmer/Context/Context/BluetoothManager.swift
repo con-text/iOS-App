@@ -85,6 +85,7 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
         }
         
         println(RSSI)
+        println(advertisementData)
         
         // If we see a device called Nimble, then it's a device that hasn't been setup
         if advertisementData["kCBAdvDataLocalName"] as! String == "Nimble" {
@@ -214,6 +215,18 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
             readString += dataString!.substringFromIndex(1)
         } else if (messageType == "3" && (readString.isEmpty == false)) {
             delegate?.receivedMessageFromDevice?(peripheral, message: readString)
+        }
+    }
+    
+    func centralManager(central: CBCentralManager!, didDisconnectPeripheral peripheral: CBPeripheral!, error: NSError!) {
+        println("Disconnected from peripheral")
+        self.currentDevice = nil
+    }
+    
+    func invalidateDatabase(peripheral: CBPeripheral!) {
+        let selector = Selector("invalidateAllAttributes")
+        if peripheral!.respondsToSelector(selector) {
+            peripheral!.swift_performSelector(selector)
         }
     }
 }

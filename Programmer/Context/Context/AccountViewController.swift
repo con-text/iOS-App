@@ -26,6 +26,10 @@ class AccountViewController: UIViewController, BluetoothManagerProtocol {
         bluetoothManager.shouldScan = true
     }
     
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
+    }
+    
     // MARK: Bluetooth delegates
     func discoveredNewDevice(peripheral: CBPeripheral!, readChannel: CBCharacteristic?, writeChannel: CBCharacteristic?, disconnectChannel: CBCharacteristic?) {
         // Grab references to the objects
@@ -42,11 +46,30 @@ class AccountViewController: UIViewController, BluetoothManagerProtocol {
     func receivedMessageFromDevice(peripheral: CBPeripheral, message: String) {
         println("Received message " + message)
         
-        // This will be the random number
-        NetworkManager().encryptStageOne(accountManager.getUserID()!, plainText: message) { (result) -> () in
-            println(result)
-            let dataToSend = result!.formatMessageForRFDuino()
-            self.currentPeripheral!.sendData(dataToSend, writeChannel: self.writeChannel!)
+        if (message == "OK") {
+            // Disconnect
+            var flag : NSInteger  = 1
+            let data = NSData(bytes: &flag, length: sizeofValue(flag))
+            self.currentPeripheral?.writeValue(data, forCharacteristic: disconnectChannel, type: .WithoutResponse)
+            // This will remove all the cached attributes...
+            self.bluetoothManager.invalidateDatabase(self.currentPeripheral)
+            self.currentPeripheral = nil
+            // And restart scanning
+            let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(5 * Double(NSEC_PER_SEC)))
+            dispatch_after(delayTime, dispatch_get_main_queue()) {
+                self.restartScan()
+            }
+        } else {
+            // This will be the random number
+            NetworkManager().encryptStageOne(accountManager.getUserID()!, plainText: message) { (result) -> () in
+                println(result)
+                let dataToSend = result!.formatMessageForRFDuino()
+                self.currentPeripheral!.sendData(dataToSend, writeChannel: self.writeChannel!)
+            }
         }
+    }
+    
+    func restartScan() {
+        bluetoothManager.startScan()
     }
 }
