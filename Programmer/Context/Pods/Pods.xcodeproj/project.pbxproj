@@ -7,272 +7,272 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1050F47119D08C3EBE774067 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E62110A298D586AD609AD10 /* Foundation.framework */; };
-		2C7606E7A96B6AF611A3B330 /* Pods-nimble-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2636D157AB286C1BFBA6DD /* Pods-nimble-dummy.m */; };
-		2D52D7D69889AFB415929750 /* Pods-nimble-SSKeychain-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BFC5BADC843BDFAAF2A7B38 /* Pods-nimble-SSKeychain-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3E34F3D53879DA18EAAC0EEC /* SSKeychain.h in Headers */ = {isa = PBXBuildFile; fileRef = D701A238B5C23893C268239D /* SSKeychain.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4319F7CC3BA54B1EC7D1AACB /* SSKeychainQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = D435647EA1FC518DBCE39418 /* SSKeychainQuery.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4B1C15B4C36666EC3DA60D82 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1161DD93DFFC02A6D83AA96 /* Alamofire.swift */; };
-		555EB382EF1B305CD840DC22 /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5A2F888665FAC5B4C5AB0B /* SSKeychainQuery.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		56D7E0B2A80EDADA5FB1B29F /* Pods-nimble-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E8BA750B1507D1235194A3F6 /* Pods-nimble-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5FAD258EC2D16DAD4E777652 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E62110A298D586AD609AD10 /* Foundation.framework */; };
-		6C382803BC09437652D2FE1B /* Pods-nimble-Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C4D4F78FCE574A6208FFE5CA /* Pods-nimble-Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		881DE544B62636049C3E451A /* Pods-nimble-SSKeychain-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4503C5445306501B640E7E0D /* Pods-nimble-SSKeychain-dummy.m */; };
-		A716559A39F9D0A78892A194 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 464C5717D18BB0747354449A /* SSKeychain.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		CDEB982B37FD5298C8D722DC /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47D23000E392F879A5DB9DB8 /* Security.framework */; };
-		D31CEDF0F9348BE0916D2EE8 /* Pods-nimble-Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B3819B02B0DFDDE7780CE0 /* Pods-nimble-Alamofire-dummy.m */; };
-		E2F6502DDDAEC595A02432FE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E62110A298D586AD609AD10 /* Foundation.framework */; };
+		0F44F7C94BACD2E8EEB2C0CA /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = DB9457B258BE8642A3C4E000 /* SSKeychain.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		1CA401960DC2CE3191FF5F03 /* Pods-nimble-SSKeychain-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 14A6D4AC0A6D4CBF8842412D /* Pods-nimble-SSKeychain-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		205819272495EBDDF5A42660 /* Pods-nimble-Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 62CC86F0440CF44E0959CF7D /* Pods-nimble-Alamofire-dummy.m */; };
+		6139B59D3C8C736538CBAF83 /* Pods-nimble-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 231F98BD0117036AA77E17B8 /* Pods-nimble-dummy.m */; };
+		6675A43BD129D89675C2910F /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 13585CA0BDB160BA9B2561E0 /* SSKeychainQuery.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		74A32DCBE26E82D6BDB3377B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7847C5CE51A60CBB42ACFFE4 /* Security.framework */; };
+		7629D37C6208978E633D66DA /* SSKeychainQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 61F0055897C279DB5BFD02E3 /* SSKeychainQuery.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		96716A82CC9785B855037FE6 /* Pods-nimble-Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 18B4B316AFD2E99C99EE7315 /* Pods-nimble-Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE5BD3F9A8CF3511BA2A2D27 /* Pods-nimble-SSKeychain-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D295DBA6CA4ED43FC008FD /* Pods-nimble-SSKeychain-dummy.m */; };
+		B3DC6A1DE80609155F5E5149 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF367D082A8EF18051E046F7 /* Foundation.framework */; };
+		C71D19FF974CD4D8F14035AF /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2565060AF522DBF6009DDCBA /* Alamofire.swift */; };
+		CF5CD452A9AE71150B3FD406 /* SSKeychain.h in Headers */ = {isa = PBXBuildFile; fileRef = F0A2C0474064006A330166F4 /* SSKeychain.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D66552748243AC1D950ED139 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF367D082A8EF18051E046F7 /* Foundation.framework */; };
+		E27232C73F5FC9F6DD7D457E /* Pods-nimble-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9149778AE506660D8705F05C /* Pods-nimble-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E61663D90BC123FF305ADE9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF367D082A8EF18051E046F7 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		48BC5CF727EA63263CB75B52 /* PBXContainerItemProxy */ = {
+		1A08365CFC6C4E6524A64F1D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 333D29FA60B1229E247D8182 /* Project object */;
+			containerPortal = C3F241FD851F2C90E5BDB39F /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 95D22C172E67EDF2253EC287;
+			remoteGlobalIDString = 43B066D026CA6F34B7BAD50D;
 			remoteInfo = "Pods-nimble-Alamofire";
 		};
-		AF557285A4404C2224D7A691 /* PBXContainerItemProxy */ = {
+		D8344DBFEFC771771488F846 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 333D29FA60B1229E247D8182 /* Project object */;
+			containerPortal = C3F241FD851F2C90E5BDB39F /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 96669F28208BEA1BE0117BB9;
+			remoteGlobalIDString = 737A6D92706745159005A498;
 			remoteInfo = "Pods-nimble-SSKeychain";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		050F1342CB85DE3BF6464073 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		067037ED1D24FBCE61BBD4BB /* Pods-nimble-Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-nimble-Alamofire.xcconfig"; sourceTree = "<group>"; };
-		0A81D88C3437EB20A6996678 /* Pods_nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0B4F7770E5BE7A3A2F23E254 /* Pods-nimble-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-nimble-acknowledgements.plist"; sourceTree = "<group>"; };
-		10F71231233D42F81ACA24DD /* Pods-nimble-SSKeychain.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-nimble-SSKeychain.xcconfig"; sourceTree = "<group>"; };
-		236995F0CA48758E96A8F2F1 /* Pods-nimble-Alamofire-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-nimble-Alamofire-Private.xcconfig"; sourceTree = "<group>"; };
-		2E62110A298D586AD609AD10 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		4503C5445306501B640E7E0D /* Pods-nimble-SSKeychain-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-nimble-SSKeychain-dummy.m"; sourceTree = "<group>"; };
-		464C5717D18BB0747354449A /* SSKeychain.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SSKeychain.m; path = SSKeychain/SSKeychain.m; sourceTree = "<group>"; };
-		47D23000E392F879A5DB9DB8 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
-		5BFC5BADC843BDFAAF2A7B38 /* Pods-nimble-SSKeychain-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-nimble-SSKeychain-umbrella.h"; sourceTree = "<group>"; };
-		746C79F16E4DAB5FACC58F19 /* Pods-nimble-SSKeychain.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-nimble-SSKeychain.modulemap"; sourceTree = "<group>"; };
-		74D9AB0E0FA0B6AE3488E4C7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7C0F2F0B8103A5EA1E21DF01 /* Pods-nimble.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-nimble.debug.xcconfig"; sourceTree = "<group>"; };
-		815AE96170180B91A4A4CE0B /* Pods-nimble-Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-nimble-Alamofire.modulemap"; sourceTree = "<group>"; };
-		827C26E7F3053AA5E85622CA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		89770D364C933073F7EAD10D /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		98E54580A47A36CE0ABC2AF0 /* Pods-nimble-SSKeychain-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-nimble-SSKeychain-Private.xcconfig"; sourceTree = "<group>"; };
-		9A3D87648D81D5DE0BB73A99 /* SSKeychain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SSKeychain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A55673922E724FC531341C15 /* Pods-nimble-Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-nimble-Alamofire-prefix.pch"; sourceTree = "<group>"; };
-		B2B3819B02B0DFDDE7780CE0 /* Pods-nimble-Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-nimble-Alamofire-dummy.m"; sourceTree = "<group>"; };
-		B3FB6CF42635718C79BED5A4 /* Pods-nimble.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-nimble.modulemap"; sourceTree = "<group>"; };
-		BFB6653B74F0FC187E0F11A2 /* Pods-nimble-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-nimble-frameworks.sh"; sourceTree = "<group>"; };
-		C043D8C74C028338C86A9C98 /* Pods-nimble-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-nimble-environment.h"; sourceTree = "<group>"; };
-		C4D4F78FCE574A6208FFE5CA /* Pods-nimble-Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-nimble-Alamofire-umbrella.h"; sourceTree = "<group>"; };
-		CF7408341FDDB89D8415B862 /* Pods-nimble.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-nimble.release.xcconfig"; sourceTree = "<group>"; };
-		D435647EA1FC518DBCE39418 /* SSKeychainQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SSKeychainQuery.h; path = SSKeychain/SSKeychainQuery.h; sourceTree = "<group>"; };
-		D587D4071D20740C2B63CA5E /* Pods-nimble-SSKeychain-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-nimble-SSKeychain-prefix.pch"; sourceTree = "<group>"; };
-		D701A238B5C23893C268239D /* SSKeychain.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SSKeychain.h; path = SSKeychain/SSKeychain.h; sourceTree = "<group>"; };
-		DE5A2F888665FAC5B4C5AB0B /* SSKeychainQuery.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SSKeychainQuery.m; path = SSKeychain/SSKeychainQuery.m; sourceTree = "<group>"; };
-		E1161DD93DFFC02A6D83AA96 /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
-		E332B64AB9190DF428854519 /* Pods-nimble-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-nimble-resources.sh"; sourceTree = "<group>"; };
-		E8BA750B1507D1235194A3F6 /* Pods-nimble-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-nimble-umbrella.h"; sourceTree = "<group>"; };
-		F4B794A5CF1702DED14CFD05 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FA2636D157AB286C1BFBA6DD /* Pods-nimble-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-nimble-dummy.m"; sourceTree = "<group>"; };
-		FA46569A7F647D0154E6D99A /* Pods-nimble-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-nimble-acknowledgements.markdown"; sourceTree = "<group>"; };
+		037198F1CA9F015F05E1FA52 /* Pods-nimble.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-nimble.debug.xcconfig"; sourceTree = "<group>"; };
+		07D481AA169F7540130CF75B /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		09E43815E8A5B89544FB8AC0 /* Pods-nimble.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-nimble.release.xcconfig"; sourceTree = "<group>"; };
+		0E5C7E4F842932D2787077B4 /* Pods-nimble-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-nimble-resources.sh"; sourceTree = "<group>"; };
+		1071FC6348E008DCCD790E95 /* Pods-nimble-Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-nimble-Alamofire-prefix.pch"; sourceTree = "<group>"; };
+		13585CA0BDB160BA9B2561E0 /* SSKeychainQuery.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SSKeychainQuery.m; path = SSKeychain/SSKeychainQuery.m; sourceTree = "<group>"; };
+		14A6D4AC0A6D4CBF8842412D /* Pods-nimble-SSKeychain-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-nimble-SSKeychain-umbrella.h"; sourceTree = "<group>"; };
+		18B4B316AFD2E99C99EE7315 /* Pods-nimble-Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-nimble-Alamofire-umbrella.h"; sourceTree = "<group>"; };
+		1FD813B9C518DA5B1B77BCF5 /* Pods-nimble-SSKeychain-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-nimble-SSKeychain-prefix.pch"; sourceTree = "<group>"; };
+		231F98BD0117036AA77E17B8 /* Pods-nimble-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-nimble-dummy.m"; sourceTree = "<group>"; };
+		2565060AF522DBF6009DDCBA /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
+		34585C45830F009AC4354994 /* Pods-nimble-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-nimble-frameworks.sh"; sourceTree = "<group>"; };
+		44D295DBA6CA4ED43FC008FD /* Pods-nimble-SSKeychain-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-nimble-SSKeychain-dummy.m"; sourceTree = "<group>"; };
+		526C41A65760D4E57DE9EC93 /* Pods-nimble-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-nimble-acknowledgements.plist"; sourceTree = "<group>"; };
+		5B0DC35F2276ABF9B3E204B1 /* Pods-nimble-Alamofire-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-nimble-Alamofire-Private.xcconfig"; sourceTree = "<group>"; };
+		61F0055897C279DB5BFD02E3 /* SSKeychainQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SSKeychainQuery.h; path = SSKeychain/SSKeychainQuery.h; sourceTree = "<group>"; };
+		62CC86F0440CF44E0959CF7D /* Pods-nimble-Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-nimble-Alamofire-dummy.m"; sourceTree = "<group>"; };
+		76D562C038640D6DD14F642A /* Pods-nimble.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-nimble.modulemap"; sourceTree = "<group>"; };
+		7847C5CE51A60CBB42ACFFE4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		83CB21C7541150C935571B26 /* Pods-nimble-Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-nimble-Alamofire.xcconfig"; sourceTree = "<group>"; };
+		9149778AE506660D8705F05C /* Pods-nimble-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-nimble-umbrella.h"; sourceTree = "<group>"; };
+		9C7BD914AF83F920A8816AD1 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B61CAFFE9F36DC6FC059364D /* Pods-nimble-SSKeychain.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-nimble-SSKeychain.modulemap"; sourceTree = "<group>"; };
+		C18A1B1B881B86F9FA2DBFEB /* Pods-nimble-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-nimble-environment.h"; sourceTree = "<group>"; };
+		C8C39113E4EFA1BFBAB2B798 /* Pods-nimble-SSKeychain.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-nimble-SSKeychain.xcconfig"; sourceTree = "<group>"; };
+		CF367D082A8EF18051E046F7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D5C7CB00D44FBEB49ABE3D91 /* SSKeychain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SSKeychain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5ED1A9019AE54C8C95D9E21 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB9457B258BE8642A3C4E000 /* SSKeychain.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SSKeychain.m; path = SSKeychain/SSKeychain.m; sourceTree = "<group>"; };
+		EA52F5A5BC2A35FC475ADD53 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE58C3AB46711C66D24A3C36 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0A2C0474064006A330166F4 /* SSKeychain.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SSKeychain.h; path = SSKeychain/SSKeychain.h; sourceTree = "<group>"; };
+		F34A34D19BFE9BE980FE5EBD /* Pods-nimble-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-nimble-acknowledgements.markdown"; sourceTree = "<group>"; };
+		F41158E8D7DA95A20CE1F5A3 /* Pods-nimble-SSKeychain-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-nimble-SSKeychain-Private.xcconfig"; sourceTree = "<group>"; };
+		F70F1FB75E25947E1CF7D640 /* Pods_nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAFF158E451FD9A7C8CA86E2 /* Pods-nimble-Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-nimble-Alamofire.modulemap"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0E7996B36429C6465E3974D0 /* Frameworks */ = {
+		165162680D92B524E017371B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2F6502DDDAEC595A02432FE /* Foundation.framework in Frameworks */,
+				E61663D90BC123FF305ADE9B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		95A3ED55A707E3CA60641063 /* Frameworks */ = {
+		DF7656829A2AB183BC7AA186 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FAD258EC2D16DAD4E777652 /* Foundation.framework in Frameworks */,
-				CDEB982B37FD5298C8D722DC /* Security.framework in Frameworks */,
+				D66552748243AC1D950ED139 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F8DA2EEB48212DC9C9B42D6F /* Frameworks */ = {
+		E358D7B85ECBF1EADD967A9B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1050F47119D08C3EBE774067 /* Foundation.framework in Frameworks */,
+				B3DC6A1DE80609155F5E5149 /* Foundation.framework in Frameworks */,
+				74A32DCBE26E82D6BDB3377B /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1CDE5A1D058DCCE73E8BE3AE /* Pods-nimble */ = {
+		2EEF12F0C9FF80CE8639E285 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				F4B794A5CF1702DED14CFD05 /* Info.plist */,
-				B3FB6CF42635718C79BED5A4 /* Pods-nimble.modulemap */,
-				FA46569A7F647D0154E6D99A /* Pods-nimble-acknowledgements.markdown */,
-				0B4F7770E5BE7A3A2F23E254 /* Pods-nimble-acknowledgements.plist */,
-				FA2636D157AB286C1BFBA6DD /* Pods-nimble-dummy.m */,
-				C043D8C74C028338C86A9C98 /* Pods-nimble-environment.h */,
-				BFB6653B74F0FC187E0F11A2 /* Pods-nimble-frameworks.sh */,
-				E332B64AB9190DF428854519 /* Pods-nimble-resources.sh */,
-				E8BA750B1507D1235194A3F6 /* Pods-nimble-umbrella.h */,
-				7C0F2F0B8103A5EA1E21DF01 /* Pods-nimble.debug.xcconfig */,
-				CF7408341FDDB89D8415B862 /* Pods-nimble.release.xcconfig */,
-			);
-			name = "Pods-nimble";
-			path = "Target Support Files/Pods-nimble";
-			sourceTree = "<group>";
-		};
-		25FB242F192114344A449FBA /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				1CDE5A1D058DCCE73E8BE3AE /* Pods-nimble */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		27824766937000FCCEB9266B /* Alamofire */ = {
-			isa = PBXGroup;
-			children = (
-				E1161DD93DFFC02A6D83AA96 /* Alamofire.swift */,
-				50B013ACD48ECD250724F28B /* Support Files */,
-			);
-			path = Alamofire;
-			sourceTree = "<group>";
-		};
-		4ADF61434F1C18CE3E174565 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				827C26E7F3053AA5E85622CA /* Info.plist */,
-				746C79F16E4DAB5FACC58F19 /* Pods-nimble-SSKeychain.modulemap */,
-				10F71231233D42F81ACA24DD /* Pods-nimble-SSKeychain.xcconfig */,
-				98E54580A47A36CE0ABC2AF0 /* Pods-nimble-SSKeychain-Private.xcconfig */,
-				4503C5445306501B640E7E0D /* Pods-nimble-SSKeychain-dummy.m */,
-				D587D4071D20740C2B63CA5E /* Pods-nimble-SSKeychain-prefix.pch */,
-				5BFC5BADC843BDFAAF2A7B38 /* Pods-nimble-SSKeychain-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Pods-nimble-SSKeychain";
-			sourceTree = "<group>";
-		};
-		50B013ACD48ECD250724F28B /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				74D9AB0E0FA0B6AE3488E4C7 /* Info.plist */,
-				815AE96170180B91A4A4CE0B /* Pods-nimble-Alamofire.modulemap */,
-				067037ED1D24FBCE61BBD4BB /* Pods-nimble-Alamofire.xcconfig */,
-				236995F0CA48758E96A8F2F1 /* Pods-nimble-Alamofire-Private.xcconfig */,
-				B2B3819B02B0DFDDE7780CE0 /* Pods-nimble-Alamofire-dummy.m */,
-				A55673922E724FC531341C15 /* Pods-nimble-Alamofire-prefix.pch */,
-				C4D4F78FCE574A6208FFE5CA /* Pods-nimble-Alamofire-umbrella.h */,
+				EE58C3AB46711C66D24A3C36 /* Info.plist */,
+				FAFF158E451FD9A7C8CA86E2 /* Pods-nimble-Alamofire.modulemap */,
+				83CB21C7541150C935571B26 /* Pods-nimble-Alamofire.xcconfig */,
+				5B0DC35F2276ABF9B3E204B1 /* Pods-nimble-Alamofire-Private.xcconfig */,
+				62CC86F0440CF44E0959CF7D /* Pods-nimble-Alamofire-dummy.m */,
+				1071FC6348E008DCCD790E95 /* Pods-nimble-Alamofire-prefix.pch */,
+				18B4B316AFD2E99C99EE7315 /* Pods-nimble-Alamofire-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Pods-nimble-Alamofire";
 			sourceTree = "<group>";
 		};
-		733A5F57B43275BBE7FC3020 /* Pods */ = {
+		3F332F5D0EE599DF6EC1AEC0 /* SSKeychain */ = {
 			isa = PBXGroup;
 			children = (
-				27824766937000FCCEB9266B /* Alamofire */,
-				FEE7BEA2428A9BC12A055A47 /* SSKeychain */,
+				F0A2C0474064006A330166F4 /* SSKeychain.h */,
+				DB9457B258BE8642A3C4E000 /* SSKeychain.m */,
+				61F0055897C279DB5BFD02E3 /* SSKeychainQuery.h */,
+				13585CA0BDB160BA9B2561E0 /* SSKeychainQuery.m */,
+				E68C0AA15F0A4DDEBC2BB5EB /* Support Files */,
 			);
-			name = Pods;
+			path = SSKeychain;
 			sourceTree = "<group>";
 		};
-		74F5F25EB55585C090279810 /* Frameworks */ = {
+		5653032CF8A7769C60D19A05 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				95D0A519228E1EF0A2009AA8 /* iOS */,
+				76486D6633F6A4D3F3133E91 /* Pods-nimble */,
 			);
-			name = Frameworks;
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		95D0A519228E1EF0A2009AA8 /* iOS */ = {
+		5BEFB3EDB992BFB9DA48B3A2 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				2E62110A298D586AD609AD10 /* Foundation.framework */,
-				47D23000E392F879A5DB9DB8 /* Security.framework */,
+				CF367D082A8EF18051E046F7 /* Foundation.framework */,
+				7847C5CE51A60CBB42ACFFE4 /* Security.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		9670A5084FC3858657E7C25E /* Products */ = {
+		76486D6633F6A4D3F3133E91 /* Pods-nimble */ = {
 			isa = PBXGroup;
 			children = (
-				89770D364C933073F7EAD10D /* Alamofire.framework */,
-				0A81D88C3437EB20A6996678 /* Pods_nimble.framework */,
-				9A3D87648D81D5DE0BB73A99 /* SSKeychain.framework */,
+				D5ED1A9019AE54C8C95D9E21 /* Info.plist */,
+				76D562C038640D6DD14F642A /* Pods-nimble.modulemap */,
+				F34A34D19BFE9BE980FE5EBD /* Pods-nimble-acknowledgements.markdown */,
+				526C41A65760D4E57DE9EC93 /* Pods-nimble-acknowledgements.plist */,
+				231F98BD0117036AA77E17B8 /* Pods-nimble-dummy.m */,
+				C18A1B1B881B86F9FA2DBFEB /* Pods-nimble-environment.h */,
+				34585C45830F009AC4354994 /* Pods-nimble-frameworks.sh */,
+				0E5C7E4F842932D2787077B4 /* Pods-nimble-resources.sh */,
+				9149778AE506660D8705F05C /* Pods-nimble-umbrella.h */,
+				037198F1CA9F015F05E1FA52 /* Pods-nimble.debug.xcconfig */,
+				09E43815E8A5B89544FB8AC0 /* Pods-nimble.release.xcconfig */,
+			);
+			name = "Pods-nimble";
+			path = "Target Support Files/Pods-nimble";
+			sourceTree = "<group>";
+		};
+		7C975D60E1B7A2B0A1EBBC56 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CFB0C3085BEC92140D6132E5 /* Alamofire */,
+				3F332F5D0EE599DF6EC1AEC0 /* SSKeychain */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		833604708EBA90A15782B5D8 = {
+			isa = PBXGroup;
+			children = (
+				07D481AA169F7540130CF75B /* Podfile */,
+				C6158B8B9547482AED8A769A /* Frameworks */,
+				7C975D60E1B7A2B0A1EBBC56 /* Pods */,
+				C34F934CB2725796184B44B1 /* Products */,
+				5653032CF8A7769C60D19A05 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		C34F934CB2725796184B44B1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9C7BD914AF83F920A8816AD1 /* Alamofire.framework */,
+				F70F1FB75E25947E1CF7D640 /* Pods_nimble.framework */,
+				D5C7CB00D44FBEB49ABE3D91 /* SSKeychain.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D072E9A23135DE0476E7C841 = {
+		C6158B8B9547482AED8A769A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				050F1342CB85DE3BF6464073 /* Podfile */,
-				74F5F25EB55585C090279810 /* Frameworks */,
-				733A5F57B43275BBE7FC3020 /* Pods */,
-				9670A5084FC3858657E7C25E /* Products */,
-				25FB242F192114344A449FBA /* Targets Support Files */,
+				5BEFB3EDB992BFB9DA48B3A2 /* iOS */,
 			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		FEE7BEA2428A9BC12A055A47 /* SSKeychain */ = {
+		CFB0C3085BEC92140D6132E5 /* Alamofire */ = {
 			isa = PBXGroup;
 			children = (
-				D701A238B5C23893C268239D /* SSKeychain.h */,
-				464C5717D18BB0747354449A /* SSKeychain.m */,
-				D435647EA1FC518DBCE39418 /* SSKeychainQuery.h */,
-				DE5A2F888665FAC5B4C5AB0B /* SSKeychainQuery.m */,
-				4ADF61434F1C18CE3E174565 /* Support Files */,
+				2565060AF522DBF6009DDCBA /* Alamofire.swift */,
+				2EEF12F0C9FF80CE8639E285 /* Support Files */,
 			);
-			path = SSKeychain;
+			path = Alamofire;
+			sourceTree = "<group>";
+		};
+		E68C0AA15F0A4DDEBC2BB5EB /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				EA52F5A5BC2A35FC475ADD53 /* Info.plist */,
+				B61CAFFE9F36DC6FC059364D /* Pods-nimble-SSKeychain.modulemap */,
+				C8C39113E4EFA1BFBAB2B798 /* Pods-nimble-SSKeychain.xcconfig */,
+				F41158E8D7DA95A20CE1F5A3 /* Pods-nimble-SSKeychain-Private.xcconfig */,
+				44D295DBA6CA4ED43FC008FD /* Pods-nimble-SSKeychain-dummy.m */,
+				1FD813B9C518DA5B1B77BCF5 /* Pods-nimble-SSKeychain-prefix.pch */,
+				14A6D4AC0A6D4CBF8842412D /* Pods-nimble-SSKeychain-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-nimble-SSKeychain";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		10FA006EC895138D63974A50 /* Headers */ = {
+		14A6261AE2FE2FC62D144F24 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56D7E0B2A80EDADA5FB1B29F /* Pods-nimble-umbrella.h in Headers */,
+				96716A82CC9785B855037FE6 /* Pods-nimble-Alamofire-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A1E1305F26AA3C53E8312920 /* Headers */ = {
+		46FC6CD9A951112D1B10EABC /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D52D7D69889AFB415929750 /* Pods-nimble-SSKeychain-umbrella.h in Headers */,
-				3E34F3D53879DA18EAAC0EEC /* SSKeychain.h in Headers */,
-				4319F7CC3BA54B1EC7D1AACB /* SSKeychainQuery.h in Headers */,
+				E27232C73F5FC9F6DD7D457E /* Pods-nimble-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BE03161A7385EFE8333721AF /* Headers */ = {
+		E8E17DDBD75D9B7C858BEB4E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C382803BC09437652D2FE1B /* Pods-nimble-Alamofire-umbrella.h in Headers */,
+				1CA401960DC2CE3191FF5F03 /* Pods-nimble-SSKeychain-umbrella.h in Headers */,
+				CF5CD452A9AE71150B3FD406 /* SSKeychain.h in Headers */,
+				7629D37C6208978E633D66DA /* SSKeychainQuery.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		95D22C172E67EDF2253EC287 /* Pods-nimble-Alamofire */ = {
+		43B066D026CA6F34B7BAD50D /* Pods-nimble-Alamofire */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 27272137E831B740FC6A3C2A /* Build configuration list for PBXNativeTarget "Pods-nimble-Alamofire" */;
+			buildConfigurationList = DF936BA0F190743AB331C998 /* Build configuration list for PBXNativeTarget "Pods-nimble-Alamofire" */;
 			buildPhases = (
-				466DE2542E0360BA436056FD /* Sources */,
-				0E7996B36429C6465E3974D0 /* Frameworks */,
-				BE03161A7385EFE8333721AF /* Headers */,
+				C26A1224E4FB758ECDF6C12B /* Sources */,
+				165162680D92B524E017371B /* Frameworks */,
+				14A6261AE2FE2FC62D144F24 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -280,16 +280,35 @@
 			);
 			name = "Pods-nimble-Alamofire";
 			productName = "Pods-nimble-Alamofire";
-			productReference = 89770D364C933073F7EAD10D /* Alamofire.framework */;
+			productReference = 9C7BD914AF83F920A8816AD1 /* Alamofire.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		96669F28208BEA1BE0117BB9 /* Pods-nimble-SSKeychain */ = {
+		50F5739B8CD7301584ED098A /* Pods-nimble */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 39C2CCD97827344408F5C915 /* Build configuration list for PBXNativeTarget "Pods-nimble-SSKeychain" */;
+			buildConfigurationList = B86F9370705AB3F7E76937D0 /* Build configuration list for PBXNativeTarget "Pods-nimble" */;
 			buildPhases = (
-				4470EF197AB02B23C4059EFE /* Sources */,
-				95A3ED55A707E3CA60641063 /* Frameworks */,
-				A1E1305F26AA3C53E8312920 /* Headers */,
+				A6B55F1CB29BDB3CB3612400 /* Sources */,
+				DF7656829A2AB183BC7AA186 /* Frameworks */,
+				46FC6CD9A951112D1B10EABC /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8BD8A69F9D48A24B8018B3A4 /* PBXTargetDependency */,
+				2C95B3F18641C3A7C61FAF3A /* PBXTargetDependency */,
+			);
+			name = "Pods-nimble";
+			productName = "Pods-nimble";
+			productReference = F70F1FB75E25947E1CF7D640 /* Pods_nimble.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		737A6D92706745159005A498 /* Pods-nimble-SSKeychain */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 20613FA022BDAEB9FF811CA8 /* Build configuration list for PBXNativeTarget "Pods-nimble-SSKeychain" */;
+			buildPhases = (
+				B99F11C7B5DEC29BA5003A93 /* Sources */,
+				E358D7B85ECBF1EADD967A9B /* Frameworks */,
+				E8E17DDBD75D9B7C858BEB4E /* Headers */,
 			);
 			buildRules = (
 			);
@@ -297,104 +316,224 @@
 			);
 			name = "Pods-nimble-SSKeychain";
 			productName = "Pods-nimble-SSKeychain";
-			productReference = 9A3D87648D81D5DE0BB73A99 /* SSKeychain.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		EFCB9028F78652AF96C47A18 /* Pods-nimble */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 81E51139C4C363C072D9BD48 /* Build configuration list for PBXNativeTarget "Pods-nimble" */;
-			buildPhases = (
-				84B92A437BF6FE14BE16AF5F /* Sources */,
-				F8DA2EEB48212DC9C9B42D6F /* Frameworks */,
-				10FA006EC895138D63974A50 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D7A418C26FB6244611496518 /* PBXTargetDependency */,
-				5BFF1E13D4DF0B7160A9D9DA /* PBXTargetDependency */,
-			);
-			name = "Pods-nimble";
-			productName = "Pods-nimble";
-			productReference = 0A81D88C3437EB20A6996678 /* Pods_nimble.framework */;
+			productReference = D5C7CB00D44FBEB49ABE3D91 /* SSKeychain.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		333D29FA60B1229E247D8182 /* Project object */ = {
+		C3F241FD851F2C90E5BDB39F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0510;
 			};
-			buildConfigurationList = 5AB2E40C233E4A563F0C6AF1 /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = 948E76BDF10E24ED13D489CB /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = D072E9A23135DE0476E7C841;
-			productRefGroup = 9670A5084FC3858657E7C25E /* Products */;
+			mainGroup = 833604708EBA90A15782B5D8;
+			productRefGroup = C34F934CB2725796184B44B1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EFCB9028F78652AF96C47A18 /* Pods-nimble */,
-				95D22C172E67EDF2253EC287 /* Pods-nimble-Alamofire */,
-				96669F28208BEA1BE0117BB9 /* Pods-nimble-SSKeychain */,
+				50F5739B8CD7301584ED098A /* Pods-nimble */,
+				43B066D026CA6F34B7BAD50D /* Pods-nimble-Alamofire */,
+				737A6D92706745159005A498 /* Pods-nimble-SSKeychain */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4470EF197AB02B23C4059EFE /* Sources */ = {
+		A6B55F1CB29BDB3CB3612400 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				881DE544B62636049C3E451A /* Pods-nimble-SSKeychain-dummy.m in Sources */,
-				A716559A39F9D0A78892A194 /* SSKeychain.m in Sources */,
-				555EB382EF1B305CD840DC22 /* SSKeychainQuery.m in Sources */,
+				6139B59D3C8C736538CBAF83 /* Pods-nimble-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		466DE2542E0360BA436056FD /* Sources */ = {
+		B99F11C7B5DEC29BA5003A93 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B1C15B4C36666EC3DA60D82 /* Alamofire.swift in Sources */,
-				D31CEDF0F9348BE0916D2EE8 /* Pods-nimble-Alamofire-dummy.m in Sources */,
+				AE5BD3F9A8CF3511BA2A2D27 /* Pods-nimble-SSKeychain-dummy.m in Sources */,
+				0F44F7C94BACD2E8EEB2C0CA /* SSKeychain.m in Sources */,
+				6675A43BD129D89675C2910F /* SSKeychainQuery.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		84B92A437BF6FE14BE16AF5F /* Sources */ = {
+		C26A1224E4FB758ECDF6C12B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C7606E7A96B6AF611A3B330 /* Pods-nimble-dummy.m in Sources */,
+				C71D19FF974CD4D8F14035AF /* Alamofire.swift in Sources */,
+				205819272495EBDDF5A42660 /* Pods-nimble-Alamofire-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		5BFF1E13D4DF0B7160A9D9DA /* PBXTargetDependency */ = {
+		2C95B3F18641C3A7C61FAF3A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-nimble-SSKeychain";
-			target = 96669F28208BEA1BE0117BB9 /* Pods-nimble-SSKeychain */;
-			targetProxy = AF557285A4404C2224D7A691 /* PBXContainerItemProxy */;
+			target = 737A6D92706745159005A498 /* Pods-nimble-SSKeychain */;
+			targetProxy = D8344DBFEFC771771488F846 /* PBXContainerItemProxy */;
 		};
-		D7A418C26FB6244611496518 /* PBXTargetDependency */ = {
+		8BD8A69F9D48A24B8018B3A4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-nimble-Alamofire";
-			target = 95D22C172E67EDF2253EC287 /* Pods-nimble-Alamofire */;
-			targetProxy = 48BC5CF727EA63263CB75B52 /* PBXContainerItemProxy */;
+			target = 43B066D026CA6F34B7BAD50D /* Pods-nimble-Alamofire */;
+			targetProxy = 1A08365CFC6C4E6524A64F1D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		049B785CB349CE577F2670CF /* Release */ = {
+		1224CCBA7F5130C14AC9A255 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CF7408341FDDB89D8415B862 /* Pods-nimble.release.xcconfig */;
+			baseConfigurationReference = 5B0DC35F2276ABF9B3E204B1 /* Pods-nimble-Alamofire-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-nimble-Alamofire/Pods-nimble-Alamofire-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-nimble-Alamofire/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-nimble-Alamofire/Pods-nimble-Alamofire.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Alamofire;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		20FA91964C582A212E7F62D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B0DC35F2276ABF9B3E204B1 /* Pods-nimble-Alamofire-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-nimble-Alamofire/Pods-nimble-Alamofire-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-nimble-Alamofire/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-nimble-Alamofire/Pods-nimble-Alamofire.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Alamofire;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2D2692BFD0613C9EF9C23DF3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F41158E8D7DA95A20CE1F5A3 /* Pods-nimble-SSKeychain-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-nimble-SSKeychain/Pods-nimble-SSKeychain-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-nimble-SSKeychain/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-nimble-SSKeychain/Pods-nimble-SSKeychain.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SSKeychain;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7F3AB19DCA26995C8149B585 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 037198F1CA9F015F05E1FA52 /* Pods-nimble.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-nimble/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-nimble/Pods-nimble.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_nimble;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AE8FDF54B072C028CEC05975 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F41158E8D7DA95A20CE1F5A3 /* Pods-nimble-SSKeychain-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-nimble-SSKeychain/Pods-nimble-SSKeychain-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-nimble-SSKeychain/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-nimble-SSKeychain/Pods-nimble-SSKeychain.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = SSKeychain;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C815219E3A5D2B612CFC1BBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09E43815E8A5B89544FB8AC0 /* Pods-nimble.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -421,7 +560,7 @@
 			};
 			name = Release;
 		};
-		18DFB8DFD216512B193B9067 /* Debug */ = {
+		E02DDA7141A3F099B54A46F8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -460,35 +599,7 @@
 			};
 			name = Debug;
 		};
-		4D379B35F254436CBFE1D5FE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 236995F0CA48758E96A8F2F1 /* Pods-nimble-Alamofire-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-nimble-Alamofire/Pods-nimble-Alamofire-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-nimble-Alamofire/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-nimble-Alamofire/Pods-nimble-Alamofire.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = Alamofire;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		9A6943F35C32A12467D5A857 /* Release */ = {
+		F5FD88A7E7336D370457BAF3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -522,157 +633,46 @@
 			};
 			name = Release;
 		};
-		9F07586E524F74296F118CBD /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 236995F0CA48758E96A8F2F1 /* Pods-nimble-Alamofire-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-nimble-Alamofire/Pods-nimble-Alamofire-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-nimble-Alamofire/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-nimble-Alamofire/Pods-nimble-Alamofire.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = Alamofire;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		A3C179B10EE18083F3D5C6B6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 98E54580A47A36CE0ABC2AF0 /* Pods-nimble-SSKeychain-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-nimble-SSKeychain/Pods-nimble-SSKeychain-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-nimble-SSKeychain/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-nimble-SSKeychain/Pods-nimble-SSKeychain.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = SSKeychain;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		AC478C755EC78346AFE82C8C /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 98E54580A47A36CE0ABC2AF0 /* Pods-nimble-SSKeychain-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-nimble-SSKeychain/Pods-nimble-SSKeychain-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-nimble-SSKeychain/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-nimble-SSKeychain/Pods-nimble-SSKeychain.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = SSKeychain;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		B557AF0968D59EABB4241A65 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7C0F2F0B8103A5EA1E21DF01 /* Pods-nimble.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-nimble/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-nimble/Pods-nimble.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_nimble;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		27272137E831B740FC6A3C2A /* Build configuration list for PBXNativeTarget "Pods-nimble-Alamofire" */ = {
+		20613FA022BDAEB9FF811CA8 /* Build configuration list for PBXNativeTarget "Pods-nimble-SSKeychain" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4D379B35F254436CBFE1D5FE /* Debug */,
-				9F07586E524F74296F118CBD /* Release */,
+				AE8FDF54B072C028CEC05975 /* Debug */,
+				2D2692BFD0613C9EF9C23DF3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		39C2CCD97827344408F5C915 /* Build configuration list for PBXNativeTarget "Pods-nimble-SSKeychain" */ = {
+		948E76BDF10E24ED13D489CB /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A3C179B10EE18083F3D5C6B6 /* Debug */,
-				AC478C755EC78346AFE82C8C /* Release */,
+				E02DDA7141A3F099B54A46F8 /* Debug */,
+				F5FD88A7E7336D370457BAF3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5AB2E40C233E4A563F0C6AF1 /* Build configuration list for PBXProject "Pods" */ = {
+		B86F9370705AB3F7E76937D0 /* Build configuration list for PBXNativeTarget "Pods-nimble" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				18DFB8DFD216512B193B9067 /* Debug */,
-				9A6943F35C32A12467D5A857 /* Release */,
+				7F3AB19DCA26995C8149B585 /* Debug */,
+				C815219E3A5D2B612CFC1BBB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		81E51139C4C363C072D9BD48 /* Build configuration list for PBXNativeTarget "Pods-nimble" */ = {
+		DF936BA0F190743AB331C998 /* Build configuration list for PBXNativeTarget "Pods-nimble-Alamofire" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B557AF0968D59EABB4241A65 /* Debug */,
-				049B785CB349CE577F2670CF /* Release */,
+				20FA91964C582A212E7F62D6 /* Debug */,
+				1224CCBA7F5130C14AC9A255 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 333D29FA60B1229E247D8182 /* Project object */;
+	rootObject = C3F241FD851F2C90E5BDB39F /* Project object */;
 }

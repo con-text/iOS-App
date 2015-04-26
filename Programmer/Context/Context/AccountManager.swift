@@ -53,6 +53,10 @@ class AccountManager: NSObject {
     }
     
     func isSetup() -> Bool {
+        
+        //TODO: remove when 
+        return true
+        
         let setup : String? = SSKeychain.passwordForService(service, account: accountSetup, error: nil)
         
         if setup == "1" {

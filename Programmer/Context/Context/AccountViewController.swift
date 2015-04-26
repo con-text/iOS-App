@@ -9,6 +9,7 @@
 import UIKit
 import CoreBluetooth
 import FBSDKCoreKit
+import MapKit
 
 class AccountViewController: UIViewController, BluetoothManagerProtocol {
     
@@ -21,6 +22,8 @@ class AccountViewController: UIViewController, BluetoothManagerProtocol {
     
     @IBOutlet var profilePic : FacebookProfile!
     @IBOutlet var nameLabel : UILabel!
+    @IBOutlet var map: MKMapView!
+    @IBOutlet var timeLabel : UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +33,10 @@ class AccountViewController: UIViewController, BluetoothManagerProtocol {
         bluetoothManager.shouldScan = true
         
         setName()
+        updateLastLocation()
+        
+        self.map.layer.borderWidth = 2.0
+        self.map.layer.borderColor = UIColor.darkGrayColor().CGColor
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
@@ -110,5 +117,19 @@ class AccountViewController: UIViewController, BluetoothManagerProtocol {
                 println("Error: Unknown time")
                 return ""
         }
+    }
+    
+    func updateLastLocation() {
+        NetworkManager().getLastLocation(accountManager.getUserID()!, completionHandler: { (lat, lon, lastTime) -> () in
+            
+            let location = CLLocationCoordinate2DMake(lat!, lon!)
+            let span =  MKCoordinateSpanMake(0.005,0.005)
+            let region = MKCoordinateRegion(center: location, span: span)
+            
+            self.map.setRegion(region, animated: true)
+            
+            let date = NSDate(timeIntervalSince1970: lastTime!)
+            self.timeLabel.text = date.timeAgo
+        })
     }
 }

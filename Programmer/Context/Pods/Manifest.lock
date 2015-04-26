@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (1.2.0)
+  - Alamofire (1.2.1)
   - SSKeychain (1.2.3)
 
 DEPENDENCIES:
@@ -7,7 +7,7 @@ DEPENDENCIES:
   - SSKeychain (~> 1.2)
 
 SPEC CHECKSUMS:
-  Alamofire: d765c5c1713aa64106b0228aaa600a1e6851f68d
+  Alamofire: 1acfdf179aff68b41a48dff70c1ac7fa263e2bcb
   SSKeychain: 3f42991739c6c60a9cf1bbd4dff6c0d3694bcf3d
 
 COCOAPODS: 0.36.3

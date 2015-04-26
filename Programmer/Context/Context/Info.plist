@@ -28,13 +28,17 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>542</string>
+	<string>563</string>
 	<key>FacebookAppID</key>
 	<string>812072472204024</string>
 	<key>FacebookDisplayName</key>
 	<string>nimble</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>trench100free.otf</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

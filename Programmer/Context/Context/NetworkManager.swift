@@ -48,10 +48,22 @@ class NetworkManager {
         let URL = baseURLString + "/auth/stage1/" + uuid + "/" + plainText
 
         Alamofire.request(.GET, URL, encoding: .JSON)
-        .responseJSON( completionHandler: {
+        .responseJSON(completionHandler: {
             (_, _, JSON, _) -> Void in
             if let jsonResult = JSON as? Dictionary<String, String> {
                 completionHandler(result: jsonResult["message"])
+            }
+        })
+    }
+    
+    func getLastLocation(uuid: String, completionHandler: (lat: Double?, lon: Double?, lastTime: Double? ) -> ()) {
+        let URL = baseURLString + "/users/" + uuid + "/location"
+        
+        Alamofire.request(.GET, URL, encoding: .JSON)
+        .responseJSON(completionHandler : {
+            (_, _, JSON, _) -> Void in
+            if let jsonResult = JSON as? Dictionary<String, Double> {
+                completionHandler(lat: jsonResult["lat"], lon: jsonResult["lng"], lastTime: jsonResult["lastTime"])
             }
         })
     }
