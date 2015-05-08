@@ -16,6 +16,7 @@ import CoreBluetooth
                   disconnectChannel: CBCharacteristic?)
     
     optional func receivedMessageFromDevice(peripheral: CBPeripheral, message: String)
+    
 }
 
 enum DeviceType {
@@ -109,6 +110,7 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
             }
             
             if (hexString == AccountManager().getUserID()) && scanType == .Setup {
+                println("Found our device with UUID " + hexString!)
                 currentDevice = (peripheral, .Setup)
                 bluetoothManager.stopScan()
                 bluetoothManager.connectPeripheral(peripheral, options: nil)
@@ -239,5 +241,9 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
             println("Invalidating")
             peripheral!.swift_performSelector(selector)
         }
+    }
+    
+    func reconnectToPeripheral(peripheral: CBPeripheral!) {
+        self.bluetoothManager.connectPeripheral(peripheral, options: nil)
     }
 }

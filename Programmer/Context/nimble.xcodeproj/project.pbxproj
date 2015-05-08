@@ -309,7 +309,7 @@
 				TargetAttributes = {
 					A2F2F2FC1A9E45970030177D = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = A4RBL6NEVS;
+						DevelopmentTeam = B3463FU4E4;
 					};
 					A2F2F3111A9E45970030177D = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -578,8 +578,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Benji Barash (699V4A2V9S)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/denisogun/Documents/FacebookSDK,
@@ -599,8 +599,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Benji Barash (699V4A2V9S)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/denisogun/Documents/FacebookSDK,
