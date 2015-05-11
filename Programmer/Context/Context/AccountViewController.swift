@@ -24,6 +24,7 @@ class AccountViewController: UIViewController, BluetoothManagerProtocol {
     @IBOutlet var nameLabel : UILabel!
     @IBOutlet var map: MKMapView!
     @IBOutlet var timeLabel : UILabel!
+    @IBOutlet var unlockButton : UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +51,8 @@ class AccountViewController: UIViewController, BluetoothManagerProtocol {
         self.disconnectChannel = disconnectChannel
         self.currentPeripheral = peripheral
         
+        self.unlockButton.text = "Unlocking..."
+        
         println("Found our device")
         let dataToSend:[String] = "Unlock".formatMessageForRFDuino()
         
@@ -67,6 +70,8 @@ class AccountViewController: UIViewController, BluetoothManagerProtocol {
             // This will remove all the cached attributes...
             self.bluetoothManager.invalidateDatabase(self.currentPeripheral)
             self.currentPeripheral = nil
+            self.unlockButton.text = "Unlocked"
+
             // And restart scanning
             let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(5 * Double(NSEC_PER_SEC)))
             dispatch_after(delayTime, dispatch_get_main_queue()) {
@@ -84,6 +89,7 @@ class AccountViewController: UIViewController, BluetoothManagerProtocol {
     
     func restartScan() {
         bluetoothManager.startScan()
+        self.unlockButton.text = "Searching"
     }
     
     func setName() {
