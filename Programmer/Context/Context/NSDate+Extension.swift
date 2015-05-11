@@ -74,7 +74,7 @@ extension NSDate {
         
         var value: Int!
         
-        if deltaSeconds < 5 {
+        if deltaSeconds < 30 {
             // Just Now
             return NSDateTimeAgoLocalizedStrings("Just now")
         } else if deltaSeconds < kMinute {
