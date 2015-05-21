@@ -26,7 +26,12 @@ class FacebookProfile: FBSDKProfilePictureView {
             self.profileID = profileID.userID
         }
         
-        self.layer.cornerRadius = max(self.frame.size.width, self.frame.size.height)/2
+        if (UI_USER_INTERFACE_IDIOM() == .Phone) {
+            self.layer.cornerRadius = 100/2;
+        } else {
+            self.layer.cornerRadius = max(self.frame.size.width, self.frame.size.height)/2
+        }
+        
         self.layer.borderColor = UIColor.whiteColor().CGColor
         self.layer.borderWidth = 3.0
         self.layer.masksToBounds = true

@@ -33,12 +33,18 @@ class AccountViewController: UIViewController, BluetoothManagerProtocol {
         bluetoothManager.scanType = .Setup
         bluetoothManager.shouldScan = true
         
-        // Update the last seen details
+        // Update the name
         setName()
         updateLastLocation()
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:"updateLastLocation", name: UIApplicationWillEnterForegroundNotification, object: nil)
+        
         self.map.layer.borderWidth = 2.0
         self.map.layer.borderColor = UIColor.darkGrayColor().CGColor
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {

@@ -29,7 +29,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, UIScrollV
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        if accountManager.isSetup() == true && 1 == 0 {
+        if accountManager.isSetup() == true {
             println("Performing segue")
             self.performSegueWithIdentifier("showAccount", sender: self)
             return
