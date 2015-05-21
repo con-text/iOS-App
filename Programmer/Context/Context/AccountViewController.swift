@@ -33,6 +33,7 @@ class AccountViewController: UIViewController, BluetoothManagerProtocol {
         bluetoothManager.scanType = .Setup
         bluetoothManager.shouldScan = true
         
+        // Update the last seen details
         setName()
         updateLastLocation()
         
@@ -128,14 +129,22 @@ class AccountViewController: UIViewController, BluetoothManagerProtocol {
     func updateLastLocation() {
         NetworkManager().getLastLocation(accountManager.getUserID()!, completionHandler: { (lat, lon, lastTime) -> () in
             
-            let location = CLLocationCoordinate2DMake(lat!, lon!)
-            let span =  MKCoordinateSpanMake(0.005,0.005)
-            let region = MKCoordinateRegion(center: location, span: span)
+            // Set the map
+            if let latitude = lat {
+                if let longitude = lon {
+                    let location = CLLocationCoordinate2DMake(latitude, longitude)
+                    let span =  MKCoordinateSpanMake(0.005,0.005)
+                    let region = MKCoordinateRegion(center: location, span: span)
+                    
+                    self.map.setRegion(region, animated: true)
+                }
+            }
             
-            self.map.setRegion(region, animated: true)
-            
-            let date = NSDate(timeIntervalSince1970: lastTime!)
-            self.timeLabel.text = date.timeAgo
+            // Set the last login
+            if let lastLoginTime = lastTime {
+                let date = NSDate(timeIntervalSince1970: lastTime!)
+                self.timeLabel.text = date.timeAgo
+            }
         })
     }
 }

@@ -80,7 +80,7 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
     func centralManager(central: CBCentralManager!, didDiscoverPeripheral peripheral: CBPeripheral!, advertisementData: [NSObject : AnyObject]!, RSSI: NSNumber!) {
         
         if (scanType == .NotSetup) {
-            if (RSSI.integerValue < -35) || (RSSI.integerValue > 0) {
+            if (RSSI.integerValue < -45) || (RSSI.integerValue > 0) {
                 return
             }
         }
